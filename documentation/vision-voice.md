@@ -51,76 +51,46 @@ description: ~
   - `A计划 1983`
 
     <img src="pictures/A计划.jpg" width="250" />
-    
-    “胖子，你很面熟啊。”
-    
-    “我的脸又没被开水烫过，怎么会熟呢？”
 
   - `警察故事系列 1985`
 
     <img src="pictures/警察故事.jpg" width="250" />
 
-    龙叔一直都很拼。
-
   - `英雄本色系列 1986`
 
     <img src="pictures/英雄本色.jpg" width="250" />
-
-    “我要争一口气，不是想证明我有多么了不起，我是要告诉别人，我失去的东西我一定要拿回来!”
 
   - `倩女幽魂系列 1987`
 
     <img src="pictures/倩女幽魂.jpg" width="250" />
 
-    把恐怖片拍成喜剧。
-
   - `黄飞鸿系列 1991`
 
     <img src="pictures/黄飞鸿.jpg" width="250" />
-
-    自带BGM的黄飞鸿。
 
   - `都市情缘 1994`
 
     <img src="pictures/都市情缘.jpg" width="250" />
 
-    剧情很感人。（香江第一靓仔）
-
   - `大话西游 1995`
 
     <img src="pictures/大话西游.jpg" width="250" />
-
-    爱情悲喜剧。
 
   - `蜀山传 2001`
 
     <img src="pictures/蜀山传.jpg" width="250" />
 
-    郑伊健、张柏芝、古天乐、章子怡、吴京、林熙蕾 ... 高颜值。
-
   - `无间道系列 2002`
 
     <img src="pictures/无间道.jpg" width="250" />
-
-    “我想做个好人。”
-    
-    ...
-    
-    “对不起，我是警察。”
 
   - `天下无双 2002`
 
     <img src="pictures/天下无双.jpg" width="250" />
 
-    开头黄梅调的天仙配，很喜庆（过年时候看的）。
-
   - `寒战系列 2012`
 
     <img src="pictures/寒战.jpg" width="250" />
-
-    近年来难得的港式警匪片。
-
-    天王魅力依旧。
 
 ## 声
 
