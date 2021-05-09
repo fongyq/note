@@ -2,7 +2,6 @@ name: 记录成长
 
 project:
     version: fong
-    # homepage: https://fongyq.github.io/
 
 license:
     software: MIT License
@@ -12,6 +11,9 @@ links:
     header:
       - title: GitHub
         url: https://github.com/fongyk
+    homepage:
+      - title: LIVE & CHANGE
+        url: https://fongyq.github.io/
     footer:
       - title: GitHub
         url: https://github.com/fongyk
