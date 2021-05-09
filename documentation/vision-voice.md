@@ -6,7 +6,7 @@ description: ~
 ---
 
 ## 影
-> 陪伴我的成长
+> 陪伴成长
 
 - **电视剧**
   
@@ -14,59 +14,37 @@ description: ~
 
     <img src="pictures/神雕侠侣.jpg" width="250" />
 
-    亦正亦邪的杨过。
-
   - `齐天大圣 1996`
 
     <img src="pictures/齐天大圣.jpg" width="250" />
 
-    “话说另一头，猪八戒可就惨咯。”
-
-    印象很深的是三打白骨精那集，悟空分身向师父跪拜。
-
   - `西游记 1998`
 
     <img src="pictures/西游记.jpg" width="250" />
-
-    通臂猿猴很威；唐僧的形象很饱满。
   
   - `水浒传 1998`
 
     <img src="pictures/水浒传.jpg" width="250" />
 
-    李雪健老师演得非常好，浔阳楼题反诗，一镜到底；王思懿很漂亮。
-
   - `上错花轿嫁对郎 2001`
 
     <img src="pictures/上错花轿嫁对郎.jpg" width="250" />
-
-    杜冰雁！
 
   - `寻秦记 2001`
 
     <img src="pictures/寻秦记.jpg" width="250" />
 
-    第一部穿越剧，也是古天乐在tvb的最后一部电视剧。
-
-    男一男二都很黑。
-
   - `天下第一 2005`
 
     <img src="pictures/天下第一.jpg" width="250" />
-
-    海棠很漂亮，飘絮很漂亮，雪姬很漂亮。。。
 
   - `亮剑 2005`
 
     <img src="pictures/亮剑.jpg" width="250" />
 
-    狭路相逢勇者胜。
-
   - `闯关东 2008`
 
     <img src="pictures/闯关东.jpg" width="250" />
-
-    家国情怀。
 
 - **电影**
 
