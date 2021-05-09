@@ -19,7 +19,7 @@ links:
         url: https://github.com/fongyk
 
 ui:
-  mode: 'auto' # 'auto', 'dark', 'light'
+  mode: 'light' # 'auto', 'dark', 'light'
   brand:
     dark: "#00ceff"
     light: "#a20000"
