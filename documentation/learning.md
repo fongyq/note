@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 学而时习之
+disable_anchors: true
 description: ~
 ---
 

@@ -41,3 +41,7 @@ $site-ui-masthead-color-light: {{ site.ui.masthead.color.light | default: '#fff'
 // Utilities
 @import 'utilities/colors';
 @import 'utilities/js';
+
+.MathJax_Display {
+  color: #505! important; 
+ } 
