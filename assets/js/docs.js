@@ -20,10 +20,10 @@ $(function() {
 
         const $btn = $this.find('[data-role="toggle"]');
 
-        if ($btn.text() === 'Hide') {
-            $btn.text('Show');
+        if ($btn.text() === '折叠') {
+            $btn.text('展开');
         } else {
-            $btn.text('Hide');
+            $btn.text('折叠');
         }
     });
 
