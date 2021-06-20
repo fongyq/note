@@ -41,7 +41,7 @@ CPU访问存储器的速度：寄存器 > CPU Cache > 内存 > 固态硬盘（SS
  1. 某个CPU核心里的Cache数据更新时，必须要传播到其他核心的Cache，这个称为写传播（Wreite Propagation）。
  2. 多个CPU核心对数据的操作顺序，必须在其他核心看起来顺序是一样的，这个称为事务的串行化（Transaction Serialization）。
 
-基于总线嗅探机制的MESI协议是保障缓存一致性的协议。
+[基于总线嗅探机制的MESI协议是保障缓存一致性的协议](https://www.cnblogs.com/xiaolincoding/p/13886559.html)。
 
 ## `2021-06-20`
 > C/C++静态库与动态库
