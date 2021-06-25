@@ -85,7 +85,7 @@ CPU访问存储器的速度：寄存器 > CPU Cache > 内存 > 固态硬盘（SS
 
 现在CPU都是多核的，由于L1/L2 Cache是多个核心各自独有的，那么会带来多核心的缓存一致性（Cache Coherence）的问题：不同核心的Cache读写同一个数据时未及时同步导致的不一致问题。
 要想实现缓存一致性，关键是要满足两点：
- 1. 某个CPU核心里的Cache数据更新时，必须要传播到其他核心的Cache，这个称为写传播（Wreite Propagation）。
+ 1. 某个CPU核心里的Cache数据更新时，必须要传播到其他核心的Cache，这个称为写传播（Write Propagation）。
  2. 多个CPU核心对数据的操作顺序，必须在其他核心看起来顺序是一样的，这个称为事务的串行化（Transaction Serialization）。
 
 [基于总线嗅探机制的MESI协议是保障缓存一致性的协议](https://www.cnblogs.com/xiaolincoding/p/13886559.html)。
