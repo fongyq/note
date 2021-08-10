@@ -49,7 +49,7 @@ $$
 
 - $d$ ：日
 
-- $\lfloor \cdot \rfloor$ ：向下取证
+- $\lfloor \cdot \rfloor$ ：向下取整
 
 - $\bmod$ ：取模
 
