@@ -19,6 +19,21 @@ description: ~
 
 ## `2021-09-23`
 
+> pytorch: pin_memory
+
+在 pytorch 中把 tensor 放在 Pinned Memory（即 Page-locked Memory，锁页内存）中，可以大大提高把 tensor 从 CPU 拷贝到 GPU 的速度。Pinned Memory 是在物理内存（RAM）中，不会被交换到虚拟内存的硬盘中，因此 CPU -> GPU 的效率更高。当 tensor 位于 Pinned Memory ，还可以异步地（Non-blocking）把 tensor 从 CPU 转换成 CUDA tensor。
+
+此外，`DataLoader` 中也可以设置 `pin_memory=True` 。
+
+```python
+>>> x = torch.randn(2,3)
+>>> x = x.pin_memory()
+>>> cuda0 = torch.device('cuda:0')
+>>> x = x.to(cuda0, non_blocking=True)
+```
+
+## `2021-09-23`
+
 > 钩子编程（Hooking）
 
 Hooking 指通过拦截软件模块间的函数调用、消息传递、事件传递来修改或扩展操作系统、应用程序或其他软件组件的程序执行流程。 其中，处理被拦截的函数调用、事件、消息的代码，被称为钩子（Hook）。
