@@ -17,6 +17,32 @@ description: ~
     </script>
 </head>
 
+## `2021-10-20`
+
+> 轮盘赌选择方法
+
+轮盘赌选择方法又称比例选择算子，其基本思想是：每个个体 $x_i$ 被选中的概率 $p(x_i)$ 与其适应度函数（Fitness Function）值大小 $f(x_i)$ 成正比，$p(x_i) = \frac{f(x_i)}{\sum_j f(x_i)}$。
+
+轮盘赌选择法可用如下过程模拟：
+
+ 1. 计算累计概率（Cumulative Probability） $q(x_i) = \sum_{j=0}^i p(x_i)$；
+ 2. 在 $[0, 1]$ 范围内产生一个均匀分布的随机数 $r$；
+ 3. 若 $r \leq q(x_0)$，则 $x_0$被选中；
+ 4. 若 $q(x_{i-1}) < r \leq q(x_i)$，则 $x_i$ 被选中。
+
+ ```cpp
+int rouletteWheelSelection(vector<double>& prob)
+{
+    double r = rand() / (double)RAND_MAX; // 0. <= r <= 1.
+    double cum_prob = 0.0;
+    for(int i = 0; i < prob.size(); ++i)
+    {
+        cum_prob += prob[i];
+        if(cum_prob > r) return i;
+    }
+}
+ ```
+
 ## `2021-10-08`
 
 > pytorch: pin_memory
