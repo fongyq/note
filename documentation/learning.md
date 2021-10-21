@@ -17,6 +17,25 @@ description: ~
     </script>
 </head>
 
+## `2021-10-21`
+
+> shell: `md5sum`
+
+MD5 全称是报文摘要算法（Message-Digest Algorithm 5），常常被用来验证网络文件传输的完整性，防止文件被篡改。此算法对任意长度的信息逐位进行计算，产生一个二进制长度为 128 位（十六进制长度为 32 位）的“数字指纹”（或称“报文摘要”），不同文件产生相同的报文摘要的可能性是非常小的（与文件名无关）。
+
+```bash
+$ md5sum xy.txt > xy.md5
+$ cat xy.md5
+0de7b78014b979c7e5f31bc62f4f7cf4  xy.txt
+$ md5sum -c xy.md5
+xy.txt: OK
+$ echo "hello world" >> xy.txt
+$ md5sum -c xy.md5
+xy.txt: FAILED
+md5sum: WARNING: 1 computed checksum did NOT match
+```
+
+
 ## `2021-10-20`
 
 > 轮盘赌选择方法
