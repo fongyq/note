@@ -17,15 +17,74 @@ description: ~
     </script>
 </head>
 
+## `2021-11-18`
+
+> 最大公约数（Greatest Common Divisor）
+
+设 $a \geq b$ 且均为正整数，其最大公约数性质如下：
+
+- $\gcd(a, b) = \gcd(b, a)%$
+- $\gcd(a, b) = \gcd(a\%b, b)$
+- $\gcd(a, b) = \gcd(a-b, b)$
+- 当 $a$ 和 $b$ 都是偶数时，$\gcd(a, b) = 2 \times \gcd(a/2, b/2)$
+- 当 $a$ 是偶数、 $b$ 是奇数时，$\gcd(a, b) = \gcd(a/2, b)$
+- 当 $a$ 是奇数、 $b$ 是偶数时，$\gcd(a, b) = \gcd(a, b/2)$
+
+#### 辗转相除法《几何原本》
+
+取模运算比较耗时。
+
+```cpp
+int gcd(int a, int b)
+{
+    if (a < b) swap(a, b);
+    int r;
+    while (r = a % b)
+    {
+        a = b;
+        b = r;
+    }
+    return b;
+}
+```
+
+#### 更相减损术 《九章算术》
+
+当两个数相差较大时，递归比较深。
+
+```cpp
+int gcd(int a, int b)
+{
+    if(a == b) return a;
+    if(a > b) return gcd(a-b, b);
+    else return gcd(a, b-a);
+}
+```
+
+#### Binary GCD Algorithm
+
+使用移位运算和减法代替除法。
+
+```cpp
+int gcd(int a, int b)
+{
+    if(a == b) return a;
+    if(!(a&1) && !(b&1)) return 2 * gcd(a>>1, b>>1);
+    else if(!(a&1)) return gcd(a>>1, b);
+    else if(!(b&1)) return gcd(a, b>>1);
+    else return a > b? gcd(a-b, b): gcd(a, b-a);
+}
+```
+
 ## `2021-11-15`
 
 > c++: 左值（lvalue）与右值（rvalue）
 
-左值与右值的根本区别在于能否获取内存地址（`&`）。从一个左值中必定可以解析出对应对象的地址，除非该对象是位字段（bit-field）或者被声明为寄存器存储类。
+左值与右值的根本区别在于能否获取内存地址（`&`）。从一个左值中必定可以解析出对应对象的地址，除非该对象是位字段（Bit-field）或者被声明为寄存器存储类。
 
 赋值运算符左边的操作数以及自增/自减运算符操作数，不仅应该是左值，还应该是可修改的左值。可修改的左值，其类型不可以被声明为 const，并且可修改的左值不能是数组类型。赋值运算符右边可以是左值。
 
-右值引用产生的对象、临时对象是右值（当函数返回的是非引用类型时，函数会创建临时对象（temporary object），函数返回的就是这个临时对象）。
+右值引用产生的对象、临时对象是右值（当函数返回的是非引用类型时，函数会创建临时对象（Temporary Object），函数返回的就是这个临时对象）。
 
 ## `2021-10-21`
 
