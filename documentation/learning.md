@@ -17,6 +17,86 @@ description: ~
     </script>
 </head>
 
+## `2021-12-27`
+
+> numpy: indexing
+
+- `None` ：在索引中使用，可以保持/扩展维度。
+
+  ```python
+  >>> a = np.array([[10, 30, 20], [60, 40, 50]])
+  >>> a
+  array([[10, 30, 20],
+        [60, 40, 50]])
+  >>> a[0]
+  array([10, 30, 20])
+  >>> a[0, None] 
+  array([[10, 30, 20]])
+  >>> a[0, None, None] 
+  array([[[10, 30, 20]]])
+  ```
+
+- [`numpy.take`](https://numpy.org/doc/stable/reference/generated/numpy.take.html) ：按行/列索引取值。
+
+  ```python
+  numpy.take(a, indices, axis=None, out=None, mode='raise')
+  ```
+
+  + `axis=None` ：将数组平铺开再取值。
+
+    ```python
+    >>> np.take(a, [[0,1],[2,3]], axis=None)
+    array([[10, 30], 
+          [20, 60]])
+    ```
+
+  + `axis=0` ：按行取值。
+
+    ```python
+    >>> np.take(a, [0,1,0], axis=0) 
+    array([[10, 30, 20],
+          [60, 40, 50],
+          [10, 30, 20]])
+    >>> np.take(a, [[0],[1]], axis=0) 
+    array([[[10, 30, 20]],
+
+          [[60, 40, 50]]])
+    ```
+
+  + `axis=1` ：按列取值。
+
+    ```python
+    >>> np.take(a, [0,2], axis=1) 
+    array([[10, 20], 
+          [60, 50]])
+    >>> np.take(a, [[0,1],[1,1]], axis=1) 
+    array([[[10, 30],
+            [30, 30]],
+
+          [[60, 40],
+            [40, 40]]])
+    ```
+
+- [`numpy.take_along_axis`](https://numpy.org/doc/stable/reference/generated/numpy.take_along_axis.html) ：沿某个维度按索引取值，输出维度与 `indices` 相同 ，其功能与 pytorch 的 `gather` 相似。
+
+  ```python
+  numpy.take_along_axis(arr, indices, axis)
+  ```
+
+```python
+>>> a
+array([[10, 30, 20],
+       [60, 40, 50]])
+>>> np.take_along_axis(a, np.array([[0,1,1]]), axis=0)         
+array([[10, 40, 50]])
+# arr[indices[0],0], arr[indices[1],1], arr[indices[2],2]
+>>> np.take_along_axis(a, np.array([[0,1,1]]), axis=1)
+array([[10, 30, 30],
+       [60, 40, 40]])
+# arr[0,indices[0]], arr[0,indices[1]], arr[0,indices[2]]
+# arr[1,indices[0]], arr[1,indices[1]], arr[1,indices[2]]
+```
+
 ## `2021-11-18`
 
 > 最大公约数（Greatest Common Divisor）
