@@ -83,19 +83,19 @@ description: ~
   numpy.take_along_axis(arr, indices, axis)
   ```
 
-```python
->>> a
-array([[10, 30, 20],
-       [60, 40, 50]])
->>> np.take_along_axis(a, np.array([[0,1,1]]), axis=0)         
-array([[10, 40, 50]])
-# arr[indices[0],0], arr[indices[1],1], arr[indices[2],2]
->>> np.take_along_axis(a, np.array([[0,1,1]]), axis=1)
-array([[10, 30, 30],
-       [60, 40, 40]])
-# arr[0,indices[0]], arr[0,indices[1]], arr[0,indices[2]]
-# arr[1,indices[0]], arr[1,indices[1]], arr[1,indices[2]]
-```
+  ```python
+  >>> a
+  array([[10, 30, 20],
+        [60, 40, 50]])
+  >>> np.take_along_axis(a, np.array([[0,1,1]]), axis=0)         
+  array([[10, 40, 50]])
+  # arr[indices[0],0], arr[indices[1],1], arr[indices[2],2]
+  >>> np.take_along_axis(a, np.array([[0,1,1]]), axis=1)
+  array([[10, 30, 30],
+        [60, 40, 40]])
+  # arr[0,indices[0]], arr[0,indices[1]], arr[0,indices[2]]
+  # arr[1,indices[0]], arr[1,indices[1]], arr[1,indices[2]]
+  ```
 
 ## `2021-11-18`
 
