@@ -42,7 +42,7 @@ description: ~
   numpy.take(a, indices, axis=None, out=None, mode='raise')
   ```
 
-  + `axis=None` ：将数组平铺开再取值。
+  + `axis=None` ：将数组平铺开再取值，输出维度与 `indices` 保持一致。
 
     ```python
     >>> np.take(a, [[0,1],[2,3]], axis=None)
@@ -77,7 +77,7 @@ description: ~
             [40, 40]]])
     ```
 
-- [`numpy.take_along_axis`](https://numpy.org/doc/stable/reference/generated/numpy.take_along_axis.html) ：沿某个维度按索引取值，输出维度与 `indices` 相同 ，其功能与 pytorch 的 `gather` 相似。
+- [`numpy.take_along_axis`](https://numpy.org/doc/stable/reference/generated/numpy.take_along_axis.html) ：沿某个维度按索引取值；除该维度之外， `indices` 需要与 `arr` 保持相同尺寸，否则会自动广播（Broadcast），广播可能会遇到 `shape mismatch` 错误；输出维度与 `indices` 相同（广播之后）；该函数功能与 pytorch 的 `gather` 相似。
 
   ```python
   numpy.take_along_axis(arr, indices, axis)
@@ -93,8 +93,14 @@ description: ~
   >>> np.take_along_axis(a, np.array([[0,1,1]]), axis=1)
   array([[10, 30, 30],
         [60, 40, 40]])
+  ## broadcast:
   # arr[0,indices[0]], arr[0,indices[1]], arr[0,indices[2]]
   # arr[1,indices[0]], arr[1,indices[1]], arr[1,indices[2]]
+  >>> np.take_along_axis(a, np.array([[0,1,1,2],[1,0,2,0]]), axis=1) 
+  array([[10, 30, 30, 20],
+        [40, 60, 50, 60]])
+  # arr[0,indices[0][0]], arr[0,indices[0][1]], arr[0,indices[0][2], arr[0,indices[0][3]]
+  # arr[1,indices[1][0]], arr[1,indices[1][1]], arr[1,indices[1][2], arr[1,indices[1][3]]
   ```
 
 ## `2021-11-18`
