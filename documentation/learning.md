@@ -23,15 +23,15 @@ description: ~
 
 - 表达式顺序
 
-  1. `select` <select_list>
-  2. `from` <left_table>
-  3. <join_type> `join` <right_table>
-  4. `on` <join_condition>
-  5. `where` <where_condition>
-  6. `group by` <group_by_list>
-  7. `having` <having_condition>
-  8. `order by` <order_by_condition>
-  9. `limit` <limit_number>
+  1. `select` \<select_list\>
+  2. `from` \<left_table\>
+  3. \<join_type\> `join` \<right_table\>
+  4. `on` \<join_condition\>
+  5. `where` \<where_condition\>
+  6. `group by` \<group_by_list\>
+  7. `having` \<having_condition\>
+  8. `order by` \<order_by_condition\>
+  9. `limit` \<limit_number\>
 
 - 解析顺序（优先级）
 
