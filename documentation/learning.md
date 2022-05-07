@@ -17,6 +17,34 @@ description: ~
     </script>
 </head>
 
+## `2022-05-07`
+
+> sql: 顺序
+
+- 表达式顺序
+
+  1. `select` <select_list>
+  2. `from` <left_table>
+  3. <join_type> `join` <right_table>
+  4. `on` <join_condition>
+  5. `where` <where_condition>
+  6. `group by` <group_by_list>
+  7. `having` <having_condition>
+  8. `order by` <order_by_condition>
+  9. `limit` <limit_number>
+
+- 解析顺序（优先级）
+
+  1. `from` `join`
+  2. `where`
+  3. `group by`
+  4. `having`
+  5. `select`
+  6. `distinct`
+  7. `order by`
+  8. `limit`
+
+
 ## `2021-12-27`
 
 > numpy: indexing
@@ -27,7 +55,7 @@ description: ~
   >>> a = np.array([[10, 30, 20], [60, 40, 50]])
   >>> a
   array([[10, 30, 20],
-        [60, 40, 50]])
+         [60, 40, 50]])
   >>> a[0]
   array([10, 30, 20])
   >>> a[0, None] 
@@ -47,7 +75,7 @@ description: ~
     ```python
     >>> np.take(a, [[0,1],[2,3]], axis=None)
     array([[10, 30], 
-          [20, 60]])
+           [20, 60]])
     ```
 
   + `axis=0` ：按行取值。
@@ -55,12 +83,12 @@ description: ~
     ```python
     >>> np.take(a, [0,1,0], axis=0) 
     array([[10, 30, 20],
-          [60, 40, 50],
-          [10, 30, 20]])
+           [60, 40, 50],
+           [10, 30, 20]])
     >>> np.take(a, [[0],[1]], axis=0) 
     array([[[10, 30, 20]],
 
-          [[60, 40, 50]]])
+           [[60, 40, 50]]])
     ```
 
   + `axis=1` ：按列取值。
@@ -68,12 +96,12 @@ description: ~
     ```python
     >>> np.take(a, [0,2], axis=1) 
     array([[10, 20], 
-          [60, 50]])
+           [60, 50]])
     >>> np.take(a, [[0,1],[1,1]], axis=1) 
     array([[[10, 30],
             [30, 30]],
 
-          [[60, 40],
+           [[60, 40],
             [40, 40]]])
     ```
 
@@ -86,19 +114,19 @@ description: ~
   ```python
   >>> a
   array([[10, 30, 20],
-        [60, 40, 50]])
+         [60, 40, 50]])
   >>> np.take_along_axis(a, np.array([[0,1,1]]), axis=0)         
   array([[10, 40, 50]])
   # arr[indices[0],0], arr[indices[1],1], arr[indices[2],2]
   >>> np.take_along_axis(a, np.array([[0,1,1]]), axis=1)
   array([[10, 30, 30],
-        [60, 40, 40]])
+         [60, 40, 40]])
   ## broadcast:
   # arr[0,indices[0]], arr[0,indices[1]], arr[0,indices[2]]
   # arr[1,indices[0]], arr[1,indices[1]], arr[1,indices[2]]
   >>> np.take_along_axis(a, np.array([[0,1,1,2],[1,0,2,0]]), axis=1) 
   array([[10, 30, 30, 20],
-        [40, 60, 50, 60]])
+         [40, 60, 50, 60]])
   # arr[0,indices[0][0]], arr[0,indices[0][1]], arr[0,indices[0][2], arr[0,indices[0][3]]
   # arr[1,indices[1][0]], arr[1,indices[1][1]], arr[1,indices[1][2], arr[1,indices[1][3]]
   ```
