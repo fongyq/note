@@ -39,9 +39,9 @@ description: ~
   2. `where`
   3. `group by`
   4. `having`
-  5. `select`
-  6. `distinct`
-  7. `order by`
+  5. `order by`
+  6. `select`
+  7. `distinct`
   8. `limit`
 
 
