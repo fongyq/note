@@ -17,6 +17,75 @@ description: ~
     </script>
 </head>
 
+## `2022-05-19`
+
+> numpy: arg
+
+- [`numpy.argmax`](https://numpy.org/doc/stable/reference/generated/numpy.argmax.html)：获取最大元素的索引。
+
+  ```python
+  numpy.argmax(a, axis=None, out=None, *, keepdims=<no value>)
+  ```
+
+  - 相关函数：`numpy.argmin`， `numpy.max`， `numpy.min`
+
+- [`numpy.argwhere`](https://numpy.org/doc/stable/reference/generated/numpy.argwhere.html)：找出满足条件的元素对应的索引。
+
+  ```python
+  >>> arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+  >>> np.argwhere(arr % 2 != 0)
+  array([[0],
+        [2],
+        [4],
+        [6]], dtype=int64)
+  >>> np.argwhere(arr % 2 != 0).flatten()
+  array([0, 2, 4, 6], dtype=int64)
+  ## 大于4的元素减10，否则乘10
+  >>> np.where(arr > 4, arr - 10, arr * 10)
+  array([10, 20, 30, 40, -5, -4, -3, -2])
+  ```
+
+  - 相关函数：`numpy.where`
+
+- [`numpy.argsort`](https://numpy.org/doc/stable/reference/generated/numpy.argsort.html)：返回从小到大排序之后元素对应的索引。
+
+  ```python
+  numpy.argsort(a, axis=- 1, kind=None, order=None)
+  ```
+
+  ```python
+  >>> arr = np.array([88, 79, 86, 97, 89, 95, 84])
+  >>> np.sort(arr)
+  array([79, 84, 86, 88, 89, 95, 97])
+  >>> np.argsort(arr)
+  array([1, 6, 2, 0, 4, 5, 3], dtype=int64)
+  ## 两次调用可以得到元素排序之后对应的索引
+  >>> arr.argsort().argsort()
+  array([3, 0, 2, 6, 4, 5, 1], dtype=int64)
+  ```
+
+- [`numpy.argpartition`](https://numpy.org/doc/stable/reference/generated/numpy.argpartition.html)：返回局部排序之后的索引，最小的 $k+1$ 个元素排在前面，其余更大的元素排在后面（快排），前后两部分元素内部可以是无序的。
+
+  ```python
+  numpy.argpartition(a, kth, axis=-1, kind='introselect', order=None)
+  ```
+  
+  ```python
+  >>> arr = np.array([66, 15, 27, 33, 19, 13, 10])
+  ## 根据第3+1小的元素（19）划分
+  >>> np.partition(arr, 3)
+  array([15, 13, 10, 19, 27, 33, 66])
+  >>> np.argpartition(arr, 3)
+  array([1, 5, 6, 4, 2, 3, 0], dtype=int64)
+  ## 根据第2大的元素（33）划分
+  >>> np.partition(arr, -2)   
+  array([13, 10, 27, 15, 19, 33, 66])
+  >>> np.argpartition(arr, -2) 
+  array([5, 6, 2, 1, 4, 3, 0], dtype=int64)
+  ```
+
+  - 相关函数：`numpy.partition`
+
 ## `2022-05-07`
 
 > sql: 顺序
