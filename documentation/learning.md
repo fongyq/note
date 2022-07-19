@@ -17,6 +17,48 @@ description: ~
     </script>
 </head>
 
+## `2022-07-19`
+
+> python: 默认参数与可变类型
+
+默认参数是在函数定义的时候就被计算的，默认参数值存储在函数的 `__defaults__` 属性中，每次调用函数都是从这个属性中读取默认参数值。
+
+当默认参数值是可变类型的时候，这个默认值可能会因为函数调用而改变。
+
+```python
+>>> def foo(n, l=[]):
+...     l.append(n)
+...     return l
+...
+>>> foo.__defaults__ 
+([],)
+>>> foo(1)
+[1]
+>>> foo(2)
+[1, 2]
+>>> foo.__defaults__
+([1, 2],)
+```
+
+为了避免这种预期之外的结果，可以使用 `None` 作为默认参数值，在函数体中增加一个判断。
+
+```python
+>>> def bar(n, l=None):
+...     if l is None: l = []
+...     l.append(n)
+...     return l
+... 
+>>> bar.__defaults__
+(None,)
+>>> bar(1)
+[1]
+>>> bar(2)
+[2]
+>>> bar.__defaults__
+(None,)
+```
+
+
 ## `2022-05-19`
 
 > numpy: arg
@@ -1144,7 +1186,7 @@ python -u run.py
 <img src="pictures/vi-vim-cheat-sheet.gif" width="500" />
 
 ## `2020-08-19`
-> python偏函数：`funtools.partial`
+> python偏函数：`functools.partial`
 
 ```python
 def partial(func, /, *args, **keywords):
