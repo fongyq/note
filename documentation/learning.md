@@ -17,6 +17,36 @@ description: ~
     </script>
 </head>
 
+## `2022-07-21`
+
+> python: 正则表达式
+
+- 正则表达式需要用到反斜杠，反斜杠本身需要用反斜杠进行转义，所以 pattern 最好使用原始字符串（Raw String）来表示，避免反斜杠太多造成混淆。
+
+  ```python
+  >>> print('a\tb')
+  a       b
+  >>> print(r'a\tb')
+  a\tb
+  >>> print('a\\tb')
+  a\tb
+  >>> r'\t' == '\\t'
+  True
+  >>> import re
+  >>> re.findall(r'\t', 'a\t') 
+  ['\t']
+  >>> re.findall('\\t', 'a\t') 
+  ['\t']
+  >>> re.findall(r'\\t', r'a\t') 
+  ['\\t']
+  >>> re.findall(r'\\t', 'a\\t') 
+  ['\\t']
+  >>> re.findall('\\\\t', r'a\t') 
+  ['\\t']
+  ```
+
+- `\w` 用于匹配大小写字母、数字、下划线；`\b` 用于匹配 `\w` 类型和非 `\w` 类型之间的分界。比如 `abc--123` 可以理解为 `\babc\b--\b123\b` 。
+
 ## `2022-07-19`
 
 > python: 默认参数与可变类型
