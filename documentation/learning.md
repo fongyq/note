@@ -17,6 +17,34 @@ description: ~
     </script>
 </head>
 
+## `2022-09-12`
+
+> c++：[`std::tuple`](https://cplusplus.com/reference/tuple/)
+
+`std::tuple` 用于打包（Pack）多个不同类型的对象。不同于 `std::pair` ，`std::tuple` 打包的对象的个数是不定的，可通过 `std::get` 按顺序访问对象。`std::get` 返回的是引用，具体类型（引用/右值引用、常量引用/非常量引用）由输入的元组类型决定。
+
+`std::tie` 用于解压（Unpack）元组中的对象，可以忽略其中的某些对象。
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<typeinfo>
+#include<tuple>
+
+int main()
+{
+  std::tuple<int, float, char> ta(1, 2.0f, 'a');
+  auto tb = std::make_tuple("tp", 100, std::vector<int>{1,2,3});
+  std::cout << typeid(tb).name() << std::endl;
+  std::get<0>(ta) = std::get<1>(tb);
+  int tint; std::vector<int> tvec;
+  std::tie(std::ignore, tint, tvec) = tb;
+  std::cout << std::get<0>(ta) << std::endl; // 100
+  std::cout << tvec.size() << " " << tvec[2] << std::endl;
+  return 0;
+}
+```
+
 ## `2022-07-25`
 
 > 2.4GHz 频段
