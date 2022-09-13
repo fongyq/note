@@ -17,6 +17,21 @@ description: ~
     </script>
 </head>
 
+## `2022-09-14`
+
+> Windows Internet Shortcut
+
+下载网页到本地 html 文件可以使用 python 的 `requests` 包，但是如果只想将网页的 url 保存成一个快捷方式，可以用以下代码完成：
+
+```python
+>>> url = 'https://www.baidu.com'
+>>> shortcut = 'baidu.url'
+>>> with open(shortcut, mode='w', newline='\r\n') as fw:
+...     fw.write(f'[InternetShortcut]\nURL={url}')
+```
+
+注意，Windows 系统下的换行符是 `\r\n` 。
+
 ## `2022-09-12`
 
 > c++：[`std::tuple`](https://cplusplus.com/reference/tuple/)
