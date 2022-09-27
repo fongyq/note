@@ -24,22 +24,38 @@ description: ~
 vim 配置写在 `/etc/vimrc` 或 `~/.vimrc` 。
 
 ```bash
-set nocompatible    # 不必兼容 vi
-set number    # 显示行号
-set ruler    # 显示标尺（光标所在行列）
-set showcmd    # 显示命令
-set tabstop=4    #  制表符宽度为 4
-set autoindent    # 自动缩进
-set shiftwidth=4    # 自动缩进的空格数为 4
-set expandtab    # 空格代替制表符
-set showmatch    # 高亮显示配对的括号
-set hlsearch    # 对搜索的词高亮
-set t_Co=256    # 启用 256 色
-colorscheme ron    # 启用 ron 主题
-syntax on    # 语法高亮
-filetype on    # 启动文件类型自动检测
-filetype indent on    # 允许对不同类型的文件设置不同的缩进格式
-filetype plugin on    # 允许加载文件类型的插件
+# 不必兼容 vi
+set nocompatible  
+# 显示行号  
+set number    
+# 显示标尺（光标所在行列）
+set ruler   
+# 显示命令 
+set showcmd    
+#  制表符宽度为 4
+set tabstop=4    
+# 自动缩进
+set autoindent    
+# 自动缩进的空格数为 4
+set shiftwidth=4   
+# 空格代替制表符 
+set expandtab    
+# 高亮显示配对的括号
+set showmatch    
+# 对搜索的词高亮
+set hlsearch    
+# 启用 256 色
+set t_Co=256   
+# 启用 ron 主题 
+colorscheme ron    
+ # 语法高亮
+syntax on   
+# 启动文件类型自动检测
+filetype on    
+# 允许对不同类型的文件设置不同的缩进格式
+filetype indent on    
+# 允许加载文件类型的插件
+filetype plugin on    
 ```
 
 
