@@ -32,7 +32,7 @@ set number
 set ruler   
 # 显示命令 
 set showcmd    
-#  制表符宽度为 4
+# 制表符宽度为 4
 set tabstop=4    
 # 自动缩进
 set autoindent    
@@ -48,7 +48,7 @@ set hlsearch
 set t_Co=256   
 # 启用 ron 主题 
 colorscheme ron    
- # 语法高亮
+# 语法高亮
 syntax on   
 # 启动文件类型自动检测
 filetype on    
