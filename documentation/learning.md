@@ -17,6 +17,54 @@ description: ~
     </script>
 </head>
 
+## `2022-09-30`
+
+> SOCKS 和 http/https 网络代理
+
+[Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg/releases) 提供 SOCKS 和 http/https 两种协议的代理，且默认共用端口。SOCKS 是会话层协议，http/https 是应用层协议，一般 SOCKS 代理更快。
+
+<img src="pictures/proxy.png" width="400" />
+
+非浏览器应用一般不会走系统代理，比如在终端里面，就需要自己配置代理。配置方法是设置 `http_proxy`、`https_proxy`、`all_proxy` 等环境变量。它们并不是标准环境变量，而是一种使用惯例。一些程序识别小写（如`http_proxy`），一些识别大写（如`HTTP_PROXY`），因此最好是同时设置这些变量的大小写形式。
+
+配置 http/https 协议的代理：
+
+```bash
+export http_proxy=http://127.0.0.1:7890
+export https_proxy=http://127.0.0.1:7890
+```
+
+配置 SOCKS 协议的代理：
+
+```bash
+export http_proxy=socks5://127.0.0.1:7890
+export https_proxy=socks5://127.0.0.1:7890
+```
+
+如果 `http_proxy` 和 `https_proxy` 值一样，可以直接设置 `all_proxy=socks5://127.0.0.1:7890` 定义统一的代理。
+
+取消代理：
+
+```bash
+unset http_proxy https_proxy all_proxy
+```
+
+可以通过 `curl` 或 `wget` 验证代理是否生效：
+
+```bash
+# 查看ip
+curl cip.cc
+curl https://icanhazip.com
+# 获取网页html
+curl www.google.com
+wget www.google.com
+```
+
+如果是 SOCKS 协议的代理，`curl www.google.com` 需要把前缀 `socks5` 改成 `socks5h`，形如 `curl -x "socks5h://127.0.0.1:7890" www.google.com` 才会成功。因为 `socks5` 是在本地解析 `www.google.com`，无法得到正确的 IP 地址, 而 `socks5h` 是在远端解析域名。
+
+
+此外，即使配置了代理，也是 `ping` 不通谷歌的，因为 `ping` 使用的是 **网络层** 的 `ICMP` 协议。
+
 ## `2022-09-25`
 
 > vim 简单配置
