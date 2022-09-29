@@ -23,7 +23,7 @@ description: ~
 
 [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg/releases) 提供 SOCKS 和 http/https 两种协议的代理，且默认共用端口。SOCKS 是会话层协议，http/https 是应用层协议，一般 SOCKS 代理更快。
 
-<img src="pictures/proxy.png" width="400" />
+<img src="pictures/proxy.png" width="600" />
 
 非浏览器应用一般不会走系统代理，比如在终端里面，就需要自己配置代理。配置方法是设置 `http_proxy`、`https_proxy`、`all_proxy` 等环境变量。它们并不是标准环境变量，而是一种使用惯例。一些程序识别小写（如`http_proxy`），一些识别大写（如`HTTP_PROXY`），因此最好是同时设置这些变量的大小写形式。
 
