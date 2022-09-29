@@ -26,6 +26,8 @@ vim 配置写在 `/etc/vimrc` 或 `~/.vimrc` 。
 ```bash
 # 不必兼容 vi
 set nocompatible  
+# 启用鼠标
+set mouse=a
 # 显示行号  
 set number    
 # 显示标尺（光标所在行列）
