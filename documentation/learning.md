@@ -41,7 +41,7 @@ export http_proxy=socks5://127.0.0.1:7890
 export https_proxy=socks5://127.0.0.1:7890
 ```
 
-如果 `http_proxy` 和 `https_proxy` 值一样，可以直接设置 `all_proxy=socks5://127.0.0.1:7890` 定义统一的代理。
+如果 `http_proxy` 和 `https_proxy` 值一样，可以直接设置 `all_proxy=socks5://127.0.0.1:7890` 定义统一的代理。此外，一些环境例如 GNOME 是把 SOCKS 代理配置在 `all_proxy` 中，因此最好同时设置这三个变量。
 
 取消代理：
 
