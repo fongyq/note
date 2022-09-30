@@ -60,6 +60,23 @@ curl www.google.com
 wget www.google.com
 ```
 
+可以写成函数的形式保存在 `~/.bashrc` ：
+```bash
+function proxy_on() {
+    export http_proxy=http://127.0.0.1:7890
+    export https_proxy=$http_proxy
+    export all_proxy=socks5://127.0.0.1:7890
+    echo -e "终端代理已开启。"
+    curl cip.cc
+}
+
+function proxy_off(){
+    unset http_proxy https_proxy all_proxy
+    echo -e "终端代理已关闭。"
+    curl cip.ccS
+}
+```
+
 如果是 SOCKS 协议的代理，`curl www.google.com` 需要把前缀 `socks5` 改成 `socks5h`，形如 `curl -x "socks5h://127.0.0.1:7890" www.google.com` 才会成功。因为 `socks5` 是在本地解析 `www.google.com`，无法得到正确的 IP 地址, 而 `socks5h` 是在远端解析域名。
 
 python 代码验证（需要安装 pysocks ）：
