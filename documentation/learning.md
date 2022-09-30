@@ -73,7 +73,7 @@ function proxy_on() {
 function proxy_off(){
     unset http_proxy https_proxy all_proxy
     echo -e "终端代理已关闭。"
-    curl cip.ccS
+    curl cip.cc
 }
 ```
 
