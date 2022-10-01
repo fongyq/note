@@ -123,8 +123,8 @@ set showmatch
 set hlsearch    
 " 启用 256 色
 set t_Co=256   
-" 启用 ron 主题 
-colorscheme ron    
+" 启用 industry 主题 
+colorscheme industry
 " 语法高亮
 syntax on   
 " 启动文件类型自动检测
