@@ -96,45 +96,46 @@ b'103.88.46.38\n'
 
 > vim 简单配置
 
-vim 配置写在 `/etc/vimrc` 或 `~/.vimrc` 。
+vim 配置写在一般写在 `~/.vimrc` ，可以在命令模式输入 `:scriptnames` 查看配置文件生效顺序。其中 `/usr/share/vim/vimrc` 是系统配置 `/etc/vim/vimrc` 的软连接。vimrc 的注释使用引号 `"` 。
 
-```bash
-# 不必兼容 vi
+```
+" 不必兼容 vi
 set nocompatible  
-# 启用鼠标
+" 启用鼠标
 set mouse=a
-# 显示行号  
+" 显示行号  
 set number    
-# 显示标尺（光标所在行列）
+" 显示标尺（光标所在行列）
 set ruler   
-# 显示命令 
+" 显示命令 
 set showcmd    
-# 制表符宽度为 4
+" 制表符宽度为 4
 set tabstop=4    
-# 自动缩进
+" 自动缩进
 set autoindent    
-# 自动缩进的空格数为 4
+" 自动缩进的空格数为 4
 set shiftwidth=4   
-# 空格代替制表符 
+" 空格代替制表符 
 set expandtab    
-# 高亮显示配对的括号
+" 高亮显示配对的括号
 set showmatch    
-# 对搜索的词高亮
+" 对搜索的词高亮
 set hlsearch    
-# 启用 256 色
+" 启用 256 色
 set t_Co=256   
-# 启用 ron 主题 
+" 启用 ron 主题 
 colorscheme ron    
-# 语法高亮
+" 语法高亮
 syntax on   
-# 启动文件类型自动检测
+" 启动文件类型自动检测
 filetype on    
-# 允许对不同类型的文件设置不同的缩进格式
+" 允许对不同类型的文件设置不同的缩进格式
 filetype indent on    
-# 允许加载文件类型的插件
+" 允许加载文件类型的插件
 filetype plugin on    
 ```
 
+有些 Linux 系统默认使用的 locale 系统编码为 POSIX，不支持中文，会导致 vim 中出现中文乱码，可以设置系统环境变量 `export LANG=C.UTF-8` 。`locale -a` 命令可以查看系统支持的字符集。
 
 ## `2022-09-14`
 
