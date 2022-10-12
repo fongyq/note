@@ -39,7 +39,7 @@ HTTP 最早是被用作浏览器与服务器之间交互 HTML 和表单（Form�
   
 #### 接口中的 GET 和 POST
 
-这里指通过 Curl、Postman 之类的工具发出来的 GET 和 POST 请求。此时 GET 和 POST 不光能用在前端和后端的交互中，还能用在后端各个子服务的调用中（即当一种 RPC 协议使用）。
+这里指通过浏览器的 Ajax API，或者 iOS/Android App 的 Http Client，或者 Java 的 commons-httpclient/okhttp ，亦或者 Curl、Postman 之类的工具发出来的 GET 和 POST 请求。此时 GET 和 POST 不光能用在前端和后端的交互中，还能用在后端各个子服务的调用中（即当一种 RPC 协议使用）。
 
 - **GET**
 
