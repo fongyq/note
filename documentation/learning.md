@@ -19,7 +19,7 @@ description: ~
 
 ## `2022-10-12`
 
-> HTTP: GET 和 POST
+> [HTTP: GET 和 POST](https://www.zhihu.com/question/28586791/answer/767316172)
 
 #### 浏览器的 GET 和 POST
 
@@ -55,7 +55,7 @@ HTTP 最早是被用作浏览器与服务器之间交互 HTML 和表单（Form�
 
 直观上，GET 请求的参数倾向于放在 URL 上，因此有更多机会被泄漏。
 
-#### [浏览器的POST需要发两个请求吗？](https://www.zhihu.com/question/28586791/answer/767316172)
+#### 浏览器的POST需要发两个请求吗？
 
 HTTP 请求可以大致分为请求头（Header）和请求体（Body）两个部分，大家会有一个约定：所有的“控制类”信息应该放在请求头中，具体的数据放在请求体里。于是服务器端在解析时，总是会先完全解析全部的请求头，希望了解请求的控制信息后，决定这个请求怎么进一步处理：是拒绝，还是根据 Content-type 调用相应的解析器处理数据，或者直接用 Zero Copy 转发。
 
