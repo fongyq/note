@@ -23,7 +23,7 @@ description: ~
 
 #### 浏览器的 GET 和 POST
 
-HTTP 最早是被用作浏览器与服务器之间交互 HTML 和表单的通讯协议。
+HTTP 最早是被用作浏览器与服务器之间交互 HTML 和表单（Form）的通讯协议。
 
 - **GET**
 
