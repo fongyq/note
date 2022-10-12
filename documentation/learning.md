@@ -17,7 +17,7 @@ description: ~
     </script>
 </head>
 
-## `2022-10-12`
+## `2022-10-12` 「GET 和 POST」
 
 > [HTTP: GET 和 POST](https://www.zhihu.com/question/28586791/answer/767316172)
 
@@ -66,7 +66,7 @@ HTTP 请求可以大致分为请求头（Header）和请求体（Body）两个�
 客户端/浏览器以及服务器端会对 URL 的长度进行限制，因为解析 URL 字符串需要分配内存。HTTP 协议本身对 URL 长度并没有做任何规定。
 
 
-## `2022-10-10`
+## `2022-10-10` 「`/dev/null` `stat`」
 
 > linux: `/dev/null`
 
@@ -93,7 +93,7 @@ HTTP 请求可以大致分为请求头（Header）和请求体（Body）两个�
 - 文件创建时间
   
 
-## `2022-09-30`
+## `2022-09-30` 「网络代理」
 
 > SOCKS 和 http/https 网络代理
 
@@ -169,7 +169,7 @@ b'103.88.46.38\n'
 
 此外，即使配置了代理，也是 `ping` 不通谷歌的，因为 `ping` 使用的是 **网络层** 的 `ICMP` 协议。
 
-## `2022-09-25`
+## `2022-09-25` 「vim」
 
 > vim 简单配置
 
@@ -214,7 +214,7 @@ filetype plugin on
 
 有些 Linux 系统默认使用的 locale 系统编码为 POSIX，不支持中文，会导致 vim 中出现中文乱码，可以设置系统环境变量 `export LANG=C.UTF-8` 。`locale -a` 命令可以查看系统支持的字符集。
 
-## `2022-09-14`
+## `2022-09-14` 「Windows Internet Shortcut」
 
 > Windows Internet Shortcut
 
@@ -229,7 +229,7 @@ filetype plugin on
 
 注意，Windows 系统下的换行符是 `\r\n` 。
 
-## `2022-09-12`
+## `2022-09-12` 「`std::tuple`」
 
 > c++：[`std::tuple`](https://cplusplus.com/reference/tuple/)
 
@@ -257,7 +257,7 @@ int main()
 }
 ```
 
-## `2022-07-25`
+## `2022-07-25` 「2.4GHz 频段」
 
 > 2.4GHz 频段
 
@@ -273,7 +273,7 @@ ISM 频段（Industrial Scientific Medical Band）是国际通信联盟无线电
 
 传播相同的距离时，5G 信号相对 2.4G 信号较弱，这是由电磁波的物理特性决定的：波长越长，衰减越少，也更容易绕过障碍物继续传播。但是，网速不仅与信号强度有关，也与信道质量有很大的关系。5G 频段带宽更高，信道容量更大。
 
-## `2022-07-21`
+## `2022-07-21` 「python 正则」
 
 > python: 正则表达式
 
@@ -303,7 +303,7 @@ ISM 频段（Industrial Scientific Medical Band）是国际通信联盟无线电
 
 - `\w` 用于匹配大小写字母、数字、下划线；`\b` 用于匹配 `\w` 类型和非 `\w` 类型之间的分界。比如 `abc--123` 可以理解为 `\ba\Bb\Bc\b--\b1\B2\B3\b` 。
 
-## `2022-07-19`
+## `2022-07-19` 「python 默认参数」
 
 > python: 默认参数与可变类型
 
