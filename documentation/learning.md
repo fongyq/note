@@ -615,6 +615,7 @@ xy.txt: FAILED
 md5sum: WARNING: 1 computed checksum did NOT match
 ```
 
+开源加密工具箱 OpenSSL 包含了 MD5、SHA256 等报文摘要算法以及 RSA 等加密算法。Linux 系统键入 ``openssl`` 即可进入其命令行模式，或者直接调用如 ``openssl md5 xy.txt``。
 
 ## `2021-10-20`
 
