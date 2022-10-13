@@ -1873,10 +1873,11 @@ root
 ## `2020-01-01`
 > shell: `^M`
 
-运行 shell 脚本文件报错，出现 `^M` 字样，是因为编辑脚本文件是在 Windows 系统下进行的，导致shell 脚本文件是 dos 格式，即每一行结尾以 `\r\n` 来标识，而 unix 格式的文件行尾则以 `\n` 来标识。
+运行 shell 脚本文件报错，出现 `^M` 字样，是因为编辑脚本文件是在 Windows 系统下进行的，导致 shell 脚本文件是 dos 格式，即每一行结尾以 `\r\n` 来标识，而 Unix 格式的文件行尾则以 `\n` 来标识。`cat -e file` 可以发现行尾是 `^M$` 。
 
-解决方案
-- 使用 `dos2unix sh_file` 指令。
+两种解决方案:
+
+- 执行 `dos2unix file` 指令。
 
 - 用 vim 打开该脚本文件；输入 `:set ff?`，若输出 `fileformat＝dos` 可以判定是格式问题；输入 `:set fileformat=unix` 即可。
 
