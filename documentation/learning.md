@@ -245,15 +245,15 @@ filetype plugin on
 
 int main()
 {
-  std::tuple<int, float, char> ta(1, 2.0f, 'a');
-  auto tb = std::make_tuple("tp", 100, std::vector<int>{1,2,3});
-  std::cout << typeid(tb).name() << std::endl;
-  std::get<0>(ta) = std::get<1>(tb);
-  int tint; std::vector<int> tvec;
-  std::tie(std::ignore, tint, tvec) = tb;
-  std::cout << std::get<0>(ta) << std::endl; // 100
-  std::cout << tvec.size() << " " << tvec[2] << std::endl;
-  return 0;
+    std::tuple<int, float, char> ta(1, 2.0f, 'a');
+    auto tb = std::make_tuple("tp", 100, std::vector<int>{1,2,3});
+    std::cout << typeid(tb).name() << std::endl;
+    std::get<0>(ta) = std::get<1>(tb);
+    int tint; std::vector<int> tvec;
+    std::tie(std::ignore, tint, tvec) = tb;
+    std::cout << std::get<0>(ta) << std::endl; // 100
+    std::cout << tvec.size() << " " << tvec[2] << std::endl;
+    return 0;
 }
 ```
 
