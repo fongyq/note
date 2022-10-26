@@ -4,10 +4,6 @@ homepage: true
 disable_anchors: false
 description: ~
 ---
-<head>
-    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-    <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-</head>
 
 > 归去来兮
 
