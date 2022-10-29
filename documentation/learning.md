@@ -17,6 +17,14 @@ description: ~
     </script>
 </head>
 
+## `2022-10-29`
+
+字体：Times New Roman
+
+<img src="pictures/TimesNewRoman.svg.png" width="200" />
+
+Times New Roman 是经典的衬线体（Serif），常作为标准字体，广泛使用在图书、杂志、报告、公文、论文、广告等。1931 年在英国的《泰晤士报》（The Times）首次使用。
+
 ## `2022-10-12`
 
 > [HTTP: GET 和 POST](https://www.zhihu.com/question/28586791/answer/767316172)
