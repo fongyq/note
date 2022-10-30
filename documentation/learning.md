@@ -1183,9 +1183,9 @@ double c = double(a) * b; // or: (double)a * b
 ## `2021-02-23`
 > python3: f-string
 
-f-string，即格式化字符串常量（formatted string literals），是Python3.6新引入的一种字符串格式化方法。形式上是以`f`或`F`修饰的字符串（`f'xxx'`或`F'xxx'`），以大括号`{}`标明被替换的字段（大括号内外所用的引号不能冲突，可以分别使用单引号和双引号）。f-string在本质上并不是字符串常量，而是一个在运行时运算求值的表达式。
+f-string，即格式化字符串常量（Formatted String Literals），是 Python3.6 新引入的一种字符串格式化方法。形式上是以 `f` 或 `F` 修饰的字符串（`f'xxx'` 或 `F'xxx'`），以大括号 `{}` 标明被替换的字段（大括号内外所用的引号不能冲突，可以分别使用单引号和双引号）。f-string在本质上并不是字符串常量，而是一个在运行时运算求值的表达式。
 
-f-string可以解析str、int、字典、元组、列表、集合等类型，还可以解析函数。
+f-string 可以解析str、int、字典、元组、列表、集合等类型，还可以解析函数。
 
 ```python
 >>> var = 'hello'
@@ -1235,7 +1235,7 @@ ValueError: invalid literal for int() with base 10: '0xf'
 ## `2021-01-21`
 > python2: 编解码错误（UnicodeEncodeError，UnicodeDecodeError）
 
-python2的字符串有`str`和`unicode`两种类型：
+python2 的字符串有 `str` 和 `unicode` 两种类型：
 
 ```python
 s = '关关雎鸠' # type(s): str
@@ -1249,9 +1249,9 @@ print s.decode('utf-8')
 print u.encode('utf-8')
 ```
 
-python2认为unicode才是字符的唯一内码，而字符集如gbk、utf8、ascii都是字符的二进制（字节）编码形式。encode：unicode -> gbk等，decode：gbk等 -> unicode。unicode需要**编码**成相应的字符串才能存储（文件）、输出（打印），字符串需要**解码**成unicode对象才能完成拼接（`s+u`）、格式化（`%s`）、求长（`len`）等操作；在进行同时包含`str`和`unicode`的运算时，python2将`str`解码成`unicode`再执行运算。
+python2 认为 unicode 才是字符的唯一内码，而字符集如gbk、utf8、ascii都是字符的二进制（字节）编码形式。encode：unicode -> gbk等，decode：gbk等 -> unicode。unicode 需要**编码**成相应的字符串才能存储（文件）、输出（打印），字符串需要**解码**成 unicode 对象才能完成拼接（`s+u`）、格式化（`%s`）、求长（`len`）等操作；在进行同时包含 `str` 和 `unicode` 的运算时，python2 将 `str` 解码成 `unicode` 再执行运算。
 
-python2本身不知道`str`类型的编码方式，只能使用`sys.getdefaultencoding()`方式来解码，一般默认为`ascii`，因此对中文不支持。修改方式（全局）：
+python2 本身不知道 `str` 类型的编码方式，只能使用 `sys.getdefaultencoding()` 方式来解码，一般默认为 `ascii`，因此对中文不支持。修改方式（全局）：
 
 ```python
 import sys
@@ -1259,9 +1259,9 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 ```
 
-print默认将字符打印到标准输出流`sys.stdout`，python2会按照`sys.stdout.encoding`给`unicode`编码之后输出（如果`sys.stdout.encoding='ascii'`，则输出中文会有问题），至于`str`对象，则直接输出（由操作系统解决）。如果python2代码是通过管道/子进程方式运行，`sys.stdout.encoding`会失效为`None`。
+print默认将字符打印到标准输出流 `sys.stdout` ，python2 会按照 `sys.stdout.encoding` 给 `unicode` 编码之后输出（如果`sys.stdout.encoding='ascii'`，则输出中文会有问题），至于 `str` 对象，则直接输出（由操作系统解决）。如果 python2 代码是通过管道/子进程方式运行，`sys.stdout.encoding` 会失效为 `None`。
 
-使用`codecs`可以改变`sys.stdout.encoding`：
+使用 `codecs` 可以改变 `sys.stdout.encoding`：
 
 ```python
 import codecs
@@ -1269,9 +1269,9 @@ UTF8Writer = codecs.getwriter('utf-8')
 sys.stdout = UTF8Writer(sys.stdout)
 ```
 
-但是`codecs`与默认的`sys.stdout`行为相反，它会把`str`对象使用`sys.getdefaultencoding()`方式来解码成`unicode`再输出。
+但是 `codecs` 与默认的 `sys.stdout` 行为相反，它会把 `str` 对象使用 `sys.getdefaultencoding()` 方式来解码成 `unicode` 再输出。
 
-建议：永远使用`u`的形式定义中文字符串。也可通过导入`unicode_literals`包使得默认编码为`unicode`。
+建议：永远使用 `u` 的形式定义中文字符串。也可通过导入 `unicode_literals` 包使得默认编码为 `unicode`。
 ```python
 >>> from __future__ import unicode_literals
 >>> s = '中国'
@@ -1284,43 +1284,54 @@ sys.stdout = UTF8Writer(sys.stdout)
 u'\u4e2d\u56fd\u4e2d\u56fd'
 ```
 
-另外，python的编译器是默认使用`ascii`解释代码文件，如果源程序中包含中文（字符串、注释等）就会报错。在代码文件的第一行加上`# -*- coding: utf-8 -*-`可指定编码类型以支持中文。
+另外，python 的编译器是默认使用 `ascii` 解释代码文件，如果源程序中包含中文（字符串、注释等）就会报错。在代码文件的第一行加上 `# -*- coding: utf-8 -*-` 可指定编码类型以支持中文。
 
 **note**：python2 的 `str` 和 `unicode` 分别对应 python3 的 `bytes` 和 `str`。
 
 ## `2021-01-20`
-> 计算机字符集
+> 计算机字符集与编码
 
-- ASCII
-  - 8个比特（1字节），128个标准 ASCII 码 + 128个扩充码
-  - 为数字、标点、字母、一些符号编码
-- GB2312
-  - 对ASCII的中文扩展
-  - 两个ASCII码大于127的字符连在一起表示一个汉字
-  - 为ASCII中的字符都重新用两个字节编码，这就是“全角”字符
-  - 原本在127以下的叫“半角”字符
-- GBK
-  - 对GB2312的扩展
-  - 只要求第一个字符大于127，第二个不要求
-- Unicode
-  - 国际标准组织（ISO）整合了各个国家地区的编码，用16位（两个字节）表示所有字符
-    - 半角字符高位补0
-  - 一个字符就是两个字节
-  - Unicode是一个符号集（character set），没有规定二进制如何存储（如何节省空间，如何让编解码高效）
-- UTF
-  - 满足计算机网络传输的编码格式
-  - utf-8：每次传输8比特数据，还有utf-16、utf-32
-  - utf是互联网最广泛使用的Unicode实现方式，是变长编码
+#### Unicode 字符集
 
-例如，汉字“严”的Unicode编码是4e25（十六进制），UTF-8编码是e4b8a5。
+[Unicode](https://www.unicode.org/) 旨在罗列人类语言所用到的所有字符，并赋予每个字符唯一的编码。Unicode 字符编码标准是 **固定长度** 的字符编码方案，它包含了世界上几乎所有现用语言的字符。Unicode 标准描述了字符是如何用 码位（Code Point） 表示的。
+
+目前广泛应用的 Unicode 字符集使用 16 位的编码空间，也就是每个字符占用 2 个字节（UCS-2），这样理论上一共最多可以表示 $2^{16}$（即 65536 ）个字符。
+
+上述 16 位字符集构成[基本多文种平面](https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84)（Basic Multilingual Plane，BMP）。最新的统一码版本定义了 16 个辅助平面，两者合起来至少需要占据 21 位的编码空间（`0 ~ 0x10FFFF`），比 3 字节略少，码位总计 $17 \times 65,536 = 1,114,112$。但事实上辅助平面字符仍然占用 4 字节编码空间，与 UCS-4 保持一致。UCS-4 是更大而尚未填充完全的 31 位字符集，加上恒为 0 的首位，共需占据 32 位，即 4 字节，理论上最多能表示 $2^{31}$ 个字符，完全可以涵盖一切语言所用的符号。
+
+Unicode 只是一个字符集（Character Set），没有规定二进制如何存储（如何节省空间、如何让编解码高效、如何保证跨平台兼容）。将 Unicode 字符串翻译成字节序列的规则称为字符编码（Character Encoding）。
+
+中日韩统一表意文字（CJK Unified Ideographs）对应的 Unicode 码位可参考 [CJK](http://www.chi2ko.com/tool/CJK.htm)。例如，汉字 “汉” 的 Unicode 码位是 `U+6C49`（十六进制），UTF-8编码是 `e4b8a5` 。
+
 ```python
->>> u = u'\u4e25'
->>> print u
-严
+>>> u = u'\u6c49'
 >>> s = u.encode('utf-8')
 >>> s
-'\xe4\xb8\xa5'
+'\xe6\xb1\x89'
+>>> print s
+汉
 ```
+
+#### 编码
+
+- UTF（Unicode Transformation Format）
+  - UTF 是互联网最广泛使用的 Unicode 实现方式，是**变长编码**。
+  - 基础平面 BMP 的字符使用 UTF-8 编码时使用 1 至 3 字节，使用 UTF-16 编码时使用 2 字节；超出 BMP 的字符以 UTF-8 或 UTF-16 编码都需要 4 字节。
+  - 使用 UTF-32 编码任何 Unicode 字符都需要 4 个字节。
+
+- ASCII
+  - 8 个比特（1 字节），128个标准 ASCII 码 + 128个扩充码。
+  - 为数字、标点、字母、一些符号编码。
+  
+- GB2312
+  - 对 ASCII 的中文扩展。
+  - 两个 ASCII 码大于 127 的字符连在一起表示一个汉字。
+  - 为 ASCII 中的字符都重新用两个字节编码，这就是“全角”字符。
+  - 原本在 127 以下的叫“半角”字符。
+
+- GBK
+  - 对 GB2312 的扩展。
+  - 只要求第一个字符大于 127，第二个不要求。
 
 ## `2020-11-20`
 > shell: 批量结束进程
