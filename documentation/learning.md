@@ -1289,7 +1289,7 @@ u'\u4e2d\u56fd\u4e2d\u56fd'
 **note**：python2 的 `str` 和 `unicode` 分别对应 python3 的 `bytes` 和 `str`。
 
 ## `2021-01-20`
-> 计算机字符集与编码
+> 字符集与编码
 
 #### Unicode 字符集
 
@@ -1299,7 +1299,7 @@ u'\u4e2d\u56fd\u4e2d\u56fd'
 
 上述 16 位字符集构成[基本多文种平面](https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84)（Basic Multilingual Plane，BMP）。最新的统一码版本定义了 16 个辅助平面，两者合起来至少需要占据 21 位的编码空间（`0 ~ 0x10FFFF`），比 3 字节略少，码位总计 $17 \times 65,536 = 1,114,112$。但事实上辅助平面字符仍然占用 4 字节编码空间，与 UCS-4 保持一致。UCS-4 是更大而尚未填充完全的 31 位字符集，加上恒为 0 的首位，共需占据 32 位，即 4 字节，理论上最多能表示 $2^{31}$ 个字符，完全可以涵盖一切语言所用的符号。
 
-Unicode BMP 示意图（每个格子代表 256 个码点）：
+Unicode BMP 示意图（每个格子代表 256 个码位）：
 
 <img src="pictures/Unicode_BMP.svg.png" width="300" />
 
