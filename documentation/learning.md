@@ -1618,6 +1618,8 @@ bytes 以字节序列的形式（二进制形式）存储数据，不关心数�
   UnicodeEncodeError: 'gbk' codec can not encode character '\u2663' in position 1: illegal multibyte sequence
   >>> s.encode('gbk', 'ignore')
   b'\xa1\xef\xc4\xe3\xba\xc3'
+  >>> s.encode('gbk', 'ignore').decode('gbk')
+  '★你好'
   ```
 - [bytes.decode(encoding='utf-8', errors='strict')](https://docs.python.org/3/library/stdtypes.html#bytes.decode)
 
