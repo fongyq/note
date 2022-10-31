@@ -217,10 +217,19 @@ filetype on
 " 允许对不同类型的文件设置不同的缩进格式
 filetype indent on    
 " 允许加载文件类型的插件
-filetype plugin on    
+filetype plugin on
+" 设置终端显示用的编码方式
+set encoding=utf-8
+" 设置写入文件用的编码方式
+set fileencoding=utf-8
 ```
 
 有些 Linux 系统默认使用的 locale 系统编码为 POSIX，不支持中文，会导致 vim 中出现中文乱码，可以设置系统环境变量 `export LANG=C.UTF-8` 。`locale -a` 命令可以查看系统支持的字符集。
+
+`file a.txt` 命令可以查看文件所用的编码方式。
+`encoding` 是终端显示用的编码方式，vim 打开文件之后再设置是没有用的；如果打开已经是乱码（比如 vim 默认是 utf-8 编码，但是文件是 gbk 编码），可以键入 `:e ++enc=gbk` 以重新打开文件、修改终端编码方式。 `fileencoding` 是写入文件用的编码方式，可以在打开文件之后修改。
+
+`cat` 打印 gbk 编码的文件可能是乱码，可使用 `iconv` 命令修改文件编码为 utf-8：`iconv -f gbk -t utf-8 a.txt > b.txt` 。
 
 ## `2022-09-14`
 
@@ -1303,7 +1312,7 @@ Unicode BMP 示意图（每个格子代表 256 个码位）：
 
 <img src="pictures/Unicode_BMP.svg.png" width="300" />
 
-Unicode 只是一个字符集（Character Set），没有规定二进制如何存储（如何节省空间、如何让编解码高效、如何保证跨平台兼容）。将 Unicode 字符串翻译成字节序列的规则称为字符编码（Character Encoding）。
+Unicode 只是一个字符集（Character Set），没有规定二进制如何传输、存储（如何节省空间、如何让编解码高效、如何保证跨平台兼容）。将 Unicode 字符串翻译成字节序列的规则称为字符编码（Character Encoding）。
 
 中日韩统一表意文字（CJK Unified Ideographs）对应的 Unicode 码位可参考 [CJK](http://www.chi2ko.com/tool/CJK.htm)。例如，汉字 “汉” 的 Unicode 码位是 `U+6C49`（十六进制），UTF-8编码是 `e6b189` 。
 
@@ -1316,12 +1325,22 @@ Unicode 只是一个字符集（Character Set），没有规定二进制如何�
 汉
 ```
 
-#### 编码
+**note**：`\x` 后面接两个十六进制数代表一个字节。
 
-- UTF（Unicode Transformation Format）
-  - UTF 是互联网最广泛使用的 Unicode 实现方式，是**变长编码**。
-  - 基础平面 BMP 的字符使用 UTF-8 编码时使用 1 至 3 字节，使用 UTF-16 编码时使用 2 字节；超出 BMP 的字符以 UTF-8 或 UTF-16 编码都需要 4 字节。
-  - 使用 UTF-32 编码任何 Unicode 字符都需要 4 个字节。
+#### UTF（Unicode Transformation Format）
+
+UTF 是互联网最广泛使用的 Unicode 实现方式，是**变长编码**。
+
+基础平面 BMP 的字符使用 UTF-8 编码时需要 1 至 3 字节，使用 UTF-16 编码时需要 2 字节；超出 BMP 的字符以 UTF-8 或 UTF-16 编码都需要 4 字节。使用 UTF-32 编码任何 Unicode 字符都需要 4 个字节。
+
+UTF-16 的编码单元是双字节，根据这两个字节排列的先后顺序可以将 UTF-16 的编码方式分为 Big Endian 和 Little Endian。为了区分这两种编码方式，使用 BOM（Byte Order Mark，字节顺序标记）将 **零宽度非换行空格**（Zero Width No-break Space）加在字节流开头：Big Endian 的标记是 `FE FF`，Little Endian 的标记是 `FF FE`。比如，“汉”字编码得到的四字节流是 `FE FF 6C 49`（UTF-16 BE）或 `FF FE 49 6C`（UTF-16 LE）。
+
+UTF-8 以单个字节为编码单元，本来不需要 BOM 标明字节顺序，但是可以用 BOM 来帮助区分编码方式，字节流开头是 `EF BB BF`
+。不含 BOM 的 UTF-8 才是标准形式。
+
+除非有标记位，否则编辑器无法百分百确定文件的编码方式，都是推断出来的，因此编辑器都会提供编码方式选项供用户切换。
+
+#### 其他编码
 
 - ASCII
   - 8 个比特（1 字节），128个标准 ASCII 码 + 128个扩充码。
@@ -1336,6 +1355,19 @@ Unicode 只是一个字符集（Character Set），没有规定二进制如何�
 - GBK
   - 对 GB2312 的扩展。
   - 只要求第一个字符大于 127，第二个不要求。
+
+
+#### 文件十六进制视图
+
+可以通过以下几种方式查看文件内容编码得到的字节流：
+
+- vim 以二进制方式打开文件：`vim -b a.txt` ，然后输入命令：`:%!xxd` 。
+
+- 执行命令：`hexdump -C a.txt` 。
+
+- VS Code 使用 Hex Editor 插件。
+
+- Sublime Text 使用 Hex Viewer 插件。
 
 ## `2020-11-20`
 > shell: 批量结束进程
