@@ -1314,7 +1314,7 @@ Unicode BMP 示意图（每个格子代表 256 个码位）：
 
 Unicode 只是一个字符集（Character Set），没有规定二进制如何传输、存储（如何节省空间、如何让编解码高效、如何保证跨平台兼容）。将 Unicode 字符串翻译成字节序列的规则称为字符编码（Character Encoding）。
 
-中日韩统一表意文字（CJK Unified Ideographs）对应的 Unicode 码位可参考 [CJK](http://www.chi2ko.com/tool/CJK.htm)。例如，汉字 “汉” 的 Unicode 码位是 `U+6C49`（十六进制），UTF-8编码是 `e6b189` 。
+中日韩统一表意文字（CJK Unified Ideographs）对应的 Unicode 码位可参考 [CJK](http://www.chi2ko.com/tool/CJK.htm)。例如，汉字 “汉” 的 Unicode 码位是 `U+6C49`（十六进制），UTF-8编码是 `E6 B1 89` 。
 
 ```python
 >>> u = u'\u6c49'
