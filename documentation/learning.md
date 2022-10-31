@@ -1615,7 +1615,7 @@ bytes 以字节序列的形式（二进制形式）存储数据，不关心数�
   >>> s.encode('gbk')
   Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
-  UnicodeEncodeError: 'gbk' codec can't encode character '\u2663' in position 1: illegal multibyte sequence
+  UnicodeEncodeError: 'gbk' codec can not encode character '\u2663' in position 1: illegal multibyte sequence
   >>> s.encode('gbk', 'ignore')
   b'\xa1\xef\xc4\xe3\xba\xc3'
   ```
