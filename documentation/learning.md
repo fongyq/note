@@ -1600,11 +1600,26 @@ pickle模块实现了用于序列化和反序列化Python对象结构的二进�
 
 > python3 `bytes`
 
-bytes以字节序列的形式（二进制形式）存储数据，不关心数据的具体形式（字符串、图像、视频）和内容。
+bytes 以字节序列的形式（二进制形式）存储数据，不关心数据的具体形式（字符串、图像、视频）和内容。
 
-通过encode和decode，bytes和字符串（`str`，unicode）可以相互转换。
+通过 encode 和 decode，bytes和字符串（`str`，unicode）可以相互转换。
 
 在将字符串存入磁盘和从磁盘读取字符串的过程中，Python自动完成了编码和解码；使用bytes类型，则是自己指定编解码方式。
+
+- [str.encode(encoding='utf-8', errors='strict')](https://docs.python.org/3/library/stdtypes.html#str.encode)
+  - 默认编码方式是 utf-8 。
+  - `errors='strict'` 当编码失败，会抛出 UnicodeError 异常，其他选项参考 [Error Handlers](https://docs.python.org/3/library/codecs.html#error-handlers)。
+
+  ```python
+  >>> s = "★♣︎♠︎你好"
+  >>> s.encode('gbk')
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+  UnicodeEncodeError: 'gbk' codec can't encode character '\u2663' in position 1: illegal multibyte sequence
+  >>> s.encode('gbk', 'ignore')
+  b'\xa1\xef\xc4\xe3\xba\xc3'
+  ```
+- [bytes.decode(encoding='utf-8', errors='strict')](https://docs.python.org/3/library/stdtypes.html#bytes.decode)
 
 ```python
 >>> bytes("hello world", encoding="utf8")
