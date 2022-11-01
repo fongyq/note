@@ -183,7 +183,7 @@ b'103.88.46.38\n'
 
 vim 配置写在一般写在 `~/.vimrc` ，可以在命令模式输入 `:scriptnames` 查看配置文件生效顺序。其中 `/usr/share/vim/vimrc` 是系统配置 `/etc/vim/vimrc` 的软连接。vimrc 的注释使用引号 `"` 。
 
-```
+```vim
 " 不必兼容 vi
 set nocompatible  
 " 启用鼠标
