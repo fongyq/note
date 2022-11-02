@@ -1587,7 +1587,7 @@ python -u run.py
   - `:q` 退出
   - `:q!` 不保存强制退出
 
-**注** ：`Ctrl+S` 阻断向终端输出，`Ctrl+Q` 恢复向终端输出。
+**注** ：`Ctrl+s` 阻断向终端输出，`Ctrl+q` 恢复向终端输出。
 
 <img src="pictures/vi-vim-cheat-sheet.gif" width="500" />
 
