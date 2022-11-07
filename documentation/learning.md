@@ -1281,7 +1281,7 @@ sys.stdout = UTF8Writer(sys.stdout)
 
 但是 `codecs` 与默认的 `sys.stdout` 行为相反，它会把 `str` 对象使用 `sys.getdefaultencoding()` 方式来解码成 `unicode` 再输出。
 
-建议：永远使用 `u` 的形式定义中文字符串。也可通过导入 `unicode_literals` 包使得默认编码为 `unicode`。
+建议：永远使用 `u` 的形式定义中文字符串。也可通过导入 `unicode_literals` 包使得默认类型为 `unicode`。
 ```python
 >>> from __future__ import unicode_literals
 >>> s = '中国'
@@ -1351,7 +1351,7 @@ ASCII 码和国标码既定义了各自的字符集，也定义了编码方法�
   
 - [GB2312（1980）](https://zh.m.wikipedia.org/zh-hans/GB_2312)
   - 对 ASCII 的中文扩展。
-  - 收录 6763 个汉字以及包括拉丁字母、希腊字母、日文平假名及片假名字母、俄语西里尔字母在内的682个字符。。
+  - 收录 6763 个汉字以及包括拉丁字母、希腊字母、日文平假名及片假名字母、俄语西里尔字母在内的682个字符。
   - 兼容 ASCII 标准码，保留了单字节的 ASCII 码（半角）；其他字符使用双字节编码。
   - 定义了 ASCII 码的双字节版本（全角）。
   - 为了区分单字节 ASCII 码和双字节字符，双字节的字符的最高位都设为1（相当于码值都加上 128 ）。
