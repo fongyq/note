@@ -21,7 +21,9 @@ description: ~
 
 > 天干地支纪年
 
+<div align=center>
 <img src="pictures/tgdz.svg" width="300" />
+</div>
 
 天干地支是十干与十二支的合称，通称为十天干十二地支，由两者经一定的组合方式搭配成六十对为一个周期（称为六十甲子），循环往复。
 
@@ -54,7 +56,9 @@ $地支 = (\ 西历年份 - 3\ )\ \mod\ 12$
 
 > 字体：Times New Roman
 
+<div align=center>
 <img src="pictures/TimesNewRoman.svg.png" width="200" />
+</div>
 
 Times New Roman 是经典的衬线体（Serif），常作为标准字体，广泛使用在图书、杂志、报告、公文、论文、广告等。1931 年在英国的《泰晤士报》（The Times）首次使用。
 
@@ -140,7 +144,9 @@ HTTP 请求可以大致分为请求头（Header）和请求体（Body）两个�
 
 [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg/releases) 提供 SOCKS 和 http/https 两种协议的代理，且默认共用端口。SOCKS 是会话层协议，http/https 是应用层协议，一般 SOCKS 代理更快。
 
+<div align=center>
 <img src="pictures/socks.svg" width="1080" />
+</div>
 
 非浏览器应用一般不会走系统代理，比如在终端里面，就需要自己配置代理。配置方法是设置 `http_proxy`、`https_proxy`、 `ftp_proxy`、 `no_proxy`、`all_proxy` 等环境变量。它们并不是标准环境变量，而是一种使用惯例。一些程序识别小写（如`http_proxy`），一些识别大写（如`HTTP_PROXY`），因此最好是同时设置这些变量的大小写形式。
 
@@ -886,7 +892,9 @@ Linux 系统里的 Swap 空间是从硬盘划分出来的，用于内存与硬�
 
 库函数是对系统调用的封装。Shell 就好像把内核包裹起来的外壳，它是一种特殊的应用程序，俗称命令行；通过 Shell 可以执行系统调用。
 
+<div align=center>
 <img src="pictures/kernel.png" width="400" />
+</div>
 
 用户态切换到内核态有三种方式：
 - 系统调用
@@ -968,7 +976,9 @@ L3 Cache 作为核与核之间交换数据的高速缓存，通常大小在几MB
 
 CPU 访问存储器的速度：寄存器 > CPU Cache > 内存 > 固态硬盘（SSD）> 机械硬盘（HDD）。
 
+<div align=center>
 <img src="pictures/cpu_cache.png" width="400" />
+</div>
 
 现在 CPU 都是多核的，由于 L1/L2 Cache 是多个核心各自独有的，那么会带来多核心的缓存一致性（Cache Coherence）的问题：不同核心的 Cache 读写同一个数据时未及时同步导致的不一致问题。
 要想实现缓存一致性，关键是要满足两点：
@@ -1047,7 +1057,9 @@ Linux 下使用静态库，只需要在编译的时候指定静态库的搜索�
 
   总线的根数决定寻址能力，`寻址范围 = 寻址单元大小 x 2^寻址字长`。CPU 对内存的寻址单元大小是 1B，因此 32 位 CPU 对内存的最大寻址能力是 $2^{32}$B = 4GB（给电脑加到 8GB 内存是没有用的）；理论上，64 位 CPU 对内存最大寻址能力是 $2^{64}$B = 16EB，但是一般计算机限制寻址总线数量为 48，内存最大为 $2^{48}$B = 256TB。
 
+  <div align=center>
   <img src="pictures/computer_arch.png" width="400" />
+  </div>
 
 - 指令（机器码）长度
 
@@ -1078,7 +1090,9 @@ HTTPS（Hypertext Transfer Protocol Secure，超文本传输安全协议）利�
 - HTTP 和 HTTPS 使用的端口不一样，前者是 80，后者是 443。
 - HTTPS 要比 HTTP 更耗费服务器资源。
 
+<div align=center>
 <img src="pictures/https.png" width="400" />
+</div>
 
 ## `2021-04-27`
 > RPC（Remote Procedure Call，远程过程调用）
@@ -1168,7 +1182,9 @@ False
 
 浮点数使用科学计数法存储数字（格式：符号位 + 指数 + 尾数），小数点的位置根据指数的大小而浮动。
 
+<div align=center>
 <img src="pictures/float_point.image" width="400" />
+</div>
 
 - 符号位 S（Sign），即 0 和 1，是整个数字正负的符号。
 
@@ -1350,7 +1366,9 @@ u'\u4e2d\u56fd\u4e2d\u56fd'
 
 Unicode BMP 示意图（每个格子代表 256 个码位）：
 
+<div align=center>
 <img src="pictures/Unicode_BMP.svg.png" width="300" />
+</div>
 
 Unicode 只是一个字符集（Character Set），没有规定二进制如何传输、存储（如何节省空间、如何让编解码高效、如何保证跨平台兼容）。将 Unicode 字符串翻译成字节序列的规则称为字符编码（Character Encoding）。
 
@@ -1626,7 +1644,9 @@ python -u run.py
 
 **注** ：`Ctrl + s` 阻断向终端输出，`Ctrl + q` 恢复向终端输出。
 
+<div align=center>
 <img src="pictures/vi-vim-cheat-sheet.gif" width="500" />
+</div>
 
 ## `2020-08-19`
 > python偏函数：`functools.partial`
@@ -1974,7 +1994,9 @@ def fibonacci(n:int) -> int:
 - 饱和度（S）是指色彩的纯度，越高色彩越纯，低则逐渐变灰，取 0 - 100% 的数值。
 - 明度（V）、亮度（L），取 0 - 100% 。
 
+<div align=center>
 <img src="pictures/hsl-hsv.png" width="360" align="center" />
+</div>
 
 - `HSV` 的 V（明度）控制纯色中混入黑色的量，越往上，值越大，黑色越少，颜色明度越高。
 - `HSV` 的 S（饱和度）控制纯色中混入白色的量，越往右，值越大，白色越少，颜色纯度越高。
