@@ -56,9 +56,7 @@ $地支 = (\ 西历年份 - 3\ )\ \mod\ 12$
 
 > 字体：Times New Roman
 
-<div align=center>
 <img src="pictures/TimesNewRoman.svg.png" width="200" />
-</div>
 
 Times New Roman 是经典的衬线体（Serif），常作为标准字体，广泛使用在图书、杂志、报告、公文、论文、广告等。1931 年在英国的《泰晤士报》（The Times）首次使用。
 
