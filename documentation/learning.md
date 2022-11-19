@@ -17,6 +17,15 @@ description: ~
     </script>
 </head>
 
+
+## `2022-11-20`
+
+> Chrome 网页截图
+
+打开网页，`右键 - 检查` 打开开发者工具，Windows 系统使用快捷键 `Ctrl + Shift + p`（Mac OS 使用 `Command + Shift + p`）打开命令面板，输入 `screen` ，在匹配结果中选择 `Capture full-size screenshot` 可以截全屏，选择 `Capture area screenshot` 可以进行区域截屏。
+
+推荐使用截屏插件：[FireShot](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg)。
+
 ## `2022-11-18`
 
 > 阴阳历
