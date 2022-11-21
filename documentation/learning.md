@@ -1663,6 +1663,10 @@ python -u run.py
   - `:set number` 显示行号
   - `:set nonumber` 取消行号
 
+- diff
+
+  - `vim -d file1 file2`
+
 **注** ：`Ctrl + s` 阻断向终端输出，`Ctrl + q` 恢复向终端输出。
 
 <div align=center>
