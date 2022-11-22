@@ -22,7 +22,7 @@ description: ~
 
 > Chrome 网页截图
 
-打开网页，`右键 - 检查` 打开开发者工具，使用快捷键 `Ctrl + Shift + p`（Windows）或 `Command + Shift + p`（Mac OS）打开命令面板，输入 `screen` ，在匹配结果中选择 `Capture full-size screenshot` 可以截全屏，选择 `Capture area screenshot` 可以进行区域截屏。
+打开网页，按 F12 或 `右键 - 检查` 打开开发者工具，使用快捷键 `Ctrl + Shift + p`（Windows）或 `Command + Shift + p`（Mac OS）打开命令面板，输入 `screen` ，在匹配结果中选择 `Capture full-size screenshot` 可以截全屏，选择 `Capture area screenshot` 可以进行区域截屏。
 
 推荐使用截屏插件：[FireShot](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg)。
 
@@ -1849,7 +1849,7 @@ b'hello'
 ## `2020-06-01`
 > F12
 
-在网页按 F12，点击箭头可选择网页内容进行编辑，但是每次编辑都要用箭头重新选择。在 console 输入： `document.body.contentEditable="true"` 就可以对任意内容进行编辑了。
+浏览器打开网页，按 F12，点击箭头可选择网页内容进行编辑，但是每次编辑都要用箭头重新选择。在 console 输入： `document.body.contentEditable="true"` 就可以对任意内容进行编辑了。
 
 F12 可以用来查找网页中图片、视频、音频等内容的下载地址。
 
