@@ -1847,9 +1847,9 @@ b'hello'
   新用户问题（New User Problem），系统开始时推荐质量较差；新项目问题（New Item Problem），质量取决于历史数据集；稀疏性问题（Sparsity）；系统扩展性问题（Scalability）。
 
 ## `2020-06-01`
-> F12
+> F12 开发者工具
 
-浏览器打开网页，按 F12，点击箭头可选择网页内容进行编辑，但是每次编辑都要用箭头重新选择。在 console 输入： `document.body.contentEditable="true"` 就可以对任意内容进行编辑了。
+浏览器打开网页，按 F12 打开开发者工具，点击箭头可选择网页内容进行编辑，但是每次编辑都要用箭头重新选择。在 Console 输入： `document.body.contentEditable="true"` 就可以对任意内容进行编辑了，还可以解决 CSDN 需要登录复制的问题。快捷方法是：将 `javascript: document.body.contentEditable='true'; document.designMode='on'; void 0` 作为网址保存在浏览器书签栏，只要点击该书签，就可以编辑、复制网页的内容了。
 
 F12 可以用来查找网页中图片、视频、音频等内容的下载地址。
 
