@@ -161,15 +161,15 @@ HTTP 请求可以大致分为请求头（Header）和请求体（Body）两个�
 
 ## `2022-09-30`
 
-> SOCKS 和 http/https 网络代理
+> socks 和 http/https 网络代理
 
-[Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg/releases) 提供 SOCKS 和 http/https 两种协议的代理，且默认共用端口。SOCKS 是会话层协议，http/https 是应用层协议，一般 SOCKS 代理更快。
+[Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg/releases) 提供 socks 和 http/https 两种协议的代理，且默认共用端口。socks 是会话层协议，http/https 是应用层协议，一般 socks 代理更快。
 
 <div align=center>
 <img src="pictures/socks.svg" width="1080" />
 </div>
 
-非浏览器应用一般不会走系统代理，比如在终端里面，就需要自己配置代理。配置方法是设置 `http_proxy`、`https_proxy`、 `ftp_proxy`、 `no_proxy`、`all_proxy` 等环境变量。它们并不是标准环境变量，而是一种使用惯例。一些程序识别小写（如`http_proxy`），一些识别大写（如`HTTP_PROXY`），因此最好是同时设置这些变量的大小写形式。
+非浏览器应用一般不会走系统代理，比如在终端里面，就需要自己配置代理。配置方法是设置 `http_proxy`、`https_proxy`、 `ftp_proxy`、 `no_proxy`、`all_proxy` 等环境变量。它们并不是标准环境变量，而是一种使用惯例。一些程序识别小写（如 `http_proxy` ），一些识别大写（如 `HTTP_PROXY` ），因此最好是同时设置这些变量的大小写形式。
 
 配置 http/https 协议的代理：
 
@@ -178,14 +178,14 @@ export http_proxy=http://127.0.0.1:7890
 export https_proxy=http://127.0.0.1:7890
 ```
 
-配置 SOCKS 协议的代理：
+配置 socks 协议的代理：
 
 ```bash
 export http_proxy=socks5://127.0.0.1:7890
 export https_proxy=socks5://127.0.0.1:7890
 ```
 
-如果 `http_proxy` 和 `https_proxy` 值一样，可以直接设置 `all_proxy=socks5://127.0.0.1:7890` 定义统一的代理。此外，一些环境例如 GNOME 是把 SOCKS 代理配置在 `all_proxy` 中，所以最好同时设置这些变量。如果这些变量同时设置了， `all_proxy` 的优先级最低。
+如果 `http_proxy` 和 `https_proxy` 值一样，可以直接设置 `all_proxy=socks5://127.0.0.1:7890` 定义统一的代理。此外，一些环境例如 GNOME 是把 socks 代理配置在 `all_proxy` 中，所以最好同时设置这些变量。如果这些变量同时设置了， `all_proxy` 的优先级最低。
 
 取消代理：
 
@@ -199,6 +199,7 @@ unset http_proxy https_proxy all_proxy
 # 查看ip
 curl cip.cc
 curl https://icanhazip.com
+curl ifconfig.me
 # 获取网页html
 curl www.google.com
 wget www.google.com
@@ -222,7 +223,7 @@ function proxy_off(){
 ```
 
 用 `socks5h://` 代替 `socks5://` 可以避免 DNS 污染。
-如果是 SOCKS 协议的代理，`curl www.google.com` 需要把前缀 `socks5` 改成 `socks5h`，形如 `curl -x socks5h://127.0.0.1:7890 www.google.com` 才会成功。因为 `socks5` 是在本地解析 `www.google.com`，无法得到正确的 IP 地址, 而 `socks5h` 是在远端解析域名。
+如果是 socks 协议的代理，`curl www.google.com` 需要把前缀 `socks5` 改成 `socks5h`，形如 `curl -x socks5h://127.0.0.1:7890 www.google.com` 才会成功。因为 `socks5` 是在本地解析 `www.google.com`，无法得到正确的 IP 地址, 而 `socks5h` 是在远端解析域名。
 
 python 代码验证（需要安装 pysocks ）：
 
