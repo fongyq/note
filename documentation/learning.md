@@ -17,6 +17,13 @@ description: ~
     </script>
 </head>
 
+## `2022-11-30`
+
+> python3：[`EOFError`](https://docs.python.org/3.10/library/exceptions.html#EOFError)
+
+当 `input()` 函数遇到文件结束符（比如输入流结束，或者在终端输入时按 `Ctrl + z`（Windows） 或 `Ctrl + d`（Mac OS）），会抛出 `EOFError` 异常。
+
+**note**：`io.IOBase.read()` 和 `io.IOBase.readline()` 读到文件末尾不会抛出异常，而是返回空字符串。
 
 ## `2022-11-20`
 
