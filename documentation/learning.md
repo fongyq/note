@@ -1324,7 +1324,7 @@ f-string 的 `{}` 表达式内不能出现反斜杠。如果字符串内要使�
     s = f'{\t}'
                ^
 SyntaxError: f-string expression part cannot include a backslash
->>> s = f"{var} {{}}"
+>>> s = f'{var} \{{}\}'
 >>> s
 'hello {}'
 >>> s.format('world')
