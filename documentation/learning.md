@@ -1318,13 +1318,20 @@ f-string 可以解析 str、int、字典、元组、列表、集合等类型，�
 
 f-string 的 `{}` 表达式内不能出现反斜杠。如果字符串内要使用 `{}` ，需要在外面再嵌套一层 `{}` ，比如 `f'{var} {[]}'` （由于网页的 bug，这里用 `[]` 代替了 `{}`）得到 `'hello {}'` 。
 
+<!-- {% raw %} -->
 ```python
 >>> s = f'{\t}'
   File "<stdin>", line 1
     s = f'{\t}'
                ^
 SyntaxError: f-string expression part cannot include a backslash
+>>> s = f'{var} {{}}'
+>>> s
+'hello {}'
+>>> s.format('world')
+'hello world'
 ```
+<!-- {% endraw %} -->
 
 ## `2021-02-22`
 > python: 进制转换
