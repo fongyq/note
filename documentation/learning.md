@@ -1316,7 +1316,7 @@ f-string 可以解析 str、int、字典、元组、列表、集合等类型，�
 'my name is tom'
 ```
 
-f-string 的 `{}` 表达式内不能出现反斜杠。如果字符串内要使用 `{}` ，需要在外面再嵌套一层 `{}` ，比如 `f'{var} {[]}'` （由于网页的 bug，这里用 `[]` 代替了 `{}`）得到 `'hello {}'` 。
+f-string 的 `{}` 表达式内不能出现反斜杠。如果字符串内要使用 `{}` ，需要在外面再嵌套一层 `{}` 。
 
 <!-- {% raw %} -->
 ```python
@@ -1330,8 +1330,13 @@ SyntaxError: f-string expression part cannot include a backslash
 'hello {}'
 >>> s.format('world')
 'hello world'
+>>> s = f'{{"key": {num}}}'
+>>> json.loads(s)
+{'key': 24.578}
 ```
 <!-- {% endraw %} -->
+
+**note**：使用 Jekyll 生成静态网站，需要使用 `{% raw %}` 标记以正常显示 `{{}}` 。
 
 ## `2021-02-22`
 > python: 进制转换
