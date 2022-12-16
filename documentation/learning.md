@@ -1330,9 +1330,6 @@ SyntaxError: f-string expression part cannot include a backslash
 'hello {}'
 >>> s.format('world')
 'hello world'
->>> s = f'{{"key": {num}}}'
->>> json.loads(s)
-{'key': 24.578}
 ```
 <!-- {% endraw %} -->
 
