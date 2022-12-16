@@ -1336,7 +1336,7 @@ SyntaxError: f-string expression part cannot include a backslash
 ```
 <!-- {% endraw %} -->
 
-**note**：使用 Jekyll 生成静态网站，需要使用 `{% raw %}` 标记以正常显示 `{{}}` 。
+**note**：使用 Jekyll 生成静态网站，需要使用 `{% raw %}` 标记以正常显示 `{{}}` ，可以注释掉。
 
 ## `2021-02-22`
 > python: 进制转换
