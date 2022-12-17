@@ -1331,9 +1331,9 @@ SyntaxError: f-string expression part cannot include a backslash
 >>> s.format('world')
 'hello world'
 ```
-<!-- {% endraw %} -->
 
 **note**：使用 Jekyll 生成静态网站，需要使用 `{% raw %}` 标记以正常显示 `{{}}` ，可以注释掉。
+<!-- {% endraw %} -->
 
 ## `2021-02-22`
 > python: 进制转换
