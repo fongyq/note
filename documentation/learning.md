@@ -21,7 +21,7 @@ description: ~
 
 > 软件开发：CI/CD
 
-CI/CD 是一种通过在应用开发阶段引入自动化来频繁向客户交付应用的方法。CI/CD 的核心概念是持续集成、持续交付和持续部署。
+[CI/CD](https://about.gitlab.com/topics/ci-cd/) 是一种通过在应用开发阶段引入自动化来频繁向客户交付应用的方法。CI/CD 的核心概念是持续集成、持续交付和持续部署。
 
 #### CI: Continuous Integration（持续集成）
 
