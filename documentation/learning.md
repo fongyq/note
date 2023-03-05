@@ -17,6 +17,36 @@ description: ~
     </script>
 </head>
 
+## `2023-03-05`
+
+> shell: [set](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
+
+set 命令用来修改 shell 环境的运行参数。命令行下不带任何参数直接执行 ``set`` 会显示所有的环境变量（POSIX 模式下的 Bash）。
+
+```bash
+set [-abefhkmnptuvxBCEHPT] [-o option-name] [--] [-] [argument …]
+set [+abefhkmnptuvxBCEHPT] [+o option-name] [--] [-] [argument …]
+```
+
+``-`` 表示开启选项， ``+`` 表示关闭选项。
+
+- ``set -e``
+
+  当指令返回非零状态值，立即终止脚本的执行。比如某条命令出错会立即退出。
+
+- ``set +e``
+  
+  关闭 ``-e`` 选项。
+
+- ``set -x``
+  
+  打印执行的指令。
+
+- ``set +x``
+  
+  关闭 ``-x`` 选项。
+
+
 ## `2023-02-24`
 
 > [Unix 时间戳](https://www.unixtimestamp.com/)
