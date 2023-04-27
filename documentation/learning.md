@@ -33,7 +33,7 @@ n &= \overline{ABC} \\
   &= 100A + 10B + C \\
   &= (A + B + C) + 9 \times (11A + B) \\
   &= \dots \\
-  &= M + 9\ or\ M
+  &= M + 9\ or\ 9
 \end{align*}
 $$
 
