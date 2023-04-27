@@ -23,7 +23,7 @@ description: ~
 
 给定一个正整数 $n$，累加 $n$ 的各位数字，直到只剩下最后一个数字 $M$，如：
 
-$$ 38 \rightarrow 3 + 8 = 11 \rightarrow 1 + 1 = 2.$$
+$$ 427 \rightarrow 4 + 2 + 7 = 13 \rightarrow 1 + 3 = 4.$$
 
 假设 $n$ 是一个三位数：
 
