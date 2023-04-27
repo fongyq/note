@@ -17,6 +17,29 @@ description: ~
     </script>
 </head>
 
+## `2023-04-27`
+
+> 整数各位相加
+
+给定一个正整数 $n$，累加 $n$ 的各位数字，直到只剩下最后一个数字 $M$，如：
+
+$$ 38 \rightarrow 3 + 8 = 11 \rightarrow 1 + 1 = 2.$$
+
+假设 $n$ 是一个三位数：
+
+$$
+\begin{align*}
+n &= \overline{ABC} \\
+  &= 100A + 10B + C \\
+  &= (A + B + C) + 9 \times (11A + B) \\
+  &= \dots \\
+  &= M + 9\ or\ M
+\end{align*}
+$$
+
+发现 $n \% 9 = (A + B + C) \%9$，不断重复累加过程，最终结果 $M$ 可由 $n$ 对 $9$ 取模得到：
+当 $n \% 9 = 0,\ M = 9$；否则 $M = n \% 9$。
+
 ## `2023-03-05`
 
 > shell: [set](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
