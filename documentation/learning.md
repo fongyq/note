@@ -17,6 +17,24 @@ description: ~
     </script>
 </head>
 
+## `2023-06-13`
+
+> 区间与从 0 开始的下标
+
+左闭右开的整数区间表示法 $[a,\ b)$ 是普遍使用的，它有以下几个优点：
+- 下界元素 $a$ 在区间内。
+- 区间的元素个数为 $b-a$，公式中没有冗余的加一/减一。
+- 连续的区间 $[a,\ b)$ 和 $[b,\ c)$，前一个区间的上界 = 后一个区间的下界。
+
+当需要表示一个长度为 $n$ 的序列，下标区间 $[0,\ n)$ 会比 $[1,\ n+1)$ 更加优雅：
+- 没有多余的加一。
+- 上界 $n$ 等于区间的长度。
+- 任一下标 $i \in [0,\ n)$ 的含义是：相对于起点 $0$ 的**偏移量**。
+
+Python 使用基于 $0$ 的索引方式，使得切片语法非常漂亮：
+- 取前 $k$ 个元素：`arr[:k]`
+- 从 $i$ 开始取 $k$ 个元素：`arr[i:i+k]`
+
 ## `2023-05-28`
 
 > shell：`wc`
@@ -58,7 +76,7 @@ $$
 
 ## `2023-03-05`
 
-> shell: [set](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
+> shell：[set](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
 
 set 命令用来修改 shell 环境的运行参数。命令行下不带任何参数直接执行 ``set`` 会显示所有的环境变量（POSIX 模式下的 Bash）。
 
