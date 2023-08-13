@@ -1803,7 +1803,7 @@ python -u run.py
   - 上一条命令执行失败，才执行下一条
 
 ## `2020-09-05`
-> [vi/vim 快捷键](https://vim.rtorr.com/lang/zh_cn)
+> [vi/vim 快捷键及指令](https://vim.rtorr.com/lang/zh_cn)
 
 - 查找
 
@@ -1864,6 +1864,11 @@ python -u run.py
 - diff
 
   - `vim -d file1 file2`
+
+- 只读模式
+
+  - `vim -R file`
+  - 可用 `view file` 替代
 
 **注** ：`Ctrl + s` 阻断向终端输出，`Ctrl + q` 恢复向终端输出。
 
