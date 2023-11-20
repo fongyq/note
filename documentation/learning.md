@@ -17,6 +17,34 @@ description: ~
     </script>
 </head>
 
+## `2023-11-20`
+
+> shell: [`cut`](https://man7.org/linux/man-pages/man1/cut.1.html)
+
+```bash
+cut OPTION... [FILE]...
+```
+
+`cut` 指令对输入文件的每一行进行剪切，打印到标准输出。
+- `-b` 按字节剪切
+- `-c` 按字符剪切
+- `-d` 指定分割符
+- `-f` 选择分割之后的字段（Fields），默认按空格分割
+  
+通过以下方式选择剪切之后需要输出的范围：
+- `N` ：选择第 `N` 个字节/字符/字段
+- `N1,N2,...` ：选择第 `N1` 和第 `N2` 个字节/字符/字段
+- `N-` ：选择第 `N` 个字节/字符/字段起至结束的所有内容
+- `N-M` ：选择第 `N` 到第 `M` 个字节/字符/字段
+- `-M` ：选择第 1 到第 `M` 个字节/字符/字段
+
+<details>
+  <summary>参考资料</summary>
+
+  https://www.geeksforgeeks.org/cut-command-linux-examples/
+
+</details>
+
 ## `2023-06-13`
 
 > 区间与从 0 开始的下标
@@ -38,7 +66,7 @@ Python 使用基于 $0$ 的索引方式，使得切片语法非常漂亮：
 
 ## `2023-05-28`
 
-> shell：`wc`
+> shell: `wc`
 
 ```bash
 wc [OPTION]... [FILE]...
@@ -77,7 +105,7 @@ $$
 
 ## `2023-03-05`
 
-> shell：[set](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
+> shell: [`set`](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
 
 set 命令用来修改 shell 环境的运行参数。命令行下不带任何参数直接执行 ``set`` 会显示所有的环境变量（POSIX 模式下的 Bash）。
 
@@ -145,7 +173,7 @@ $ date -u -d '1970-01-01' +%s
 
 ## `2022-12-25`
 
-> shell：[``sort``](https://man7.org/linux/man-pages/man1/sort.1.html)
+> shell: [``sort``](https://man7.org/linux/man-pages/man1/sort.1.html)
 
 文本排序，以行为单位。参数：
 - ``-b`` 忽略开头的空格。
@@ -159,7 +187,7 @@ $ date -u -d '1970-01-01' +%s
   - ``sort -k 2`` 按第 2 个字段排序。
   - ``sort -k 2,1`` 先按第 2 个字段排序，再按第 1 个字段排序。
 
-> shell：[``uniq``](https://man7.org/linux/man-pages/man1/uniq.1.html)
+> shell: [``uniq``](https://man7.org/linux/man-pages/man1/uniq.1.html)
 
 过滤**相邻**的重复行，一般与 ``sort`` 配合使用。参数：
 - ``-c`` 输出每行重复的次数。
