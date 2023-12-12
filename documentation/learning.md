@@ -17,6 +17,19 @@ description: ~
     </script>
 </head>
 
+## `2023-12-12`
+
+> [辛普森悖论](https://en.wikipedia.org/wiki/Simpson%27s_paradox)
+
+辛普森悖论（Simpson's Paradox）是概率和统计中的一种现象：几组数据呈现出相同的趋势，但是当这些数据被汇总后趋势消失或反转。
+
+<div align=center>
+<img src="pictures/simpsons_paradox_animation.gif" width="200" />
+</div>
+
+例如，某学校 A 和 B 两个学院的女生录取率都高于男生，A 学院的录取率低于 B 学院，两个学院总体上却是男生录取率更高。这是因为女生主要集中在低录取率的 A 学院，而在 B 学院的男生比女生多得多。由此可见，性别并非是录取率高低的唯一因素，甚至可能是毫无影响的，至于在学院中出现的比率差，可能是随机事件。
+
+
 ## `2023-11-20`
 
 > shell: [`cut`](https://man7.org/linux/man-pages/man1/cut.1.html)
