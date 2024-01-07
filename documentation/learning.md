@@ -944,7 +944,7 @@ int rouletteWheelSelection(vector<double>& prob)
 
 > pytorch: pin_memory
 
-在 pytorch 中把 tensor 放在 Pinned Memory（即 Page-locked Memory，锁页内存）中，可以大幅提高把 tensor 从 CPU 拷贝到 GPU 的速度。Pinned Memory 是在物理内存（RAM）中，不会被交换到虚拟内存的硬盘中，因此 CPU -> GPU 的效率更高。当 tensor 位于 Pinned Memory ，还可以异步地（Non-blocking）把 tensor 从 CPU 转换成 CUDA tensor。
+在 Pytorch 中把 Tensor 放在 Pinned Memory（即 Page-locked Memory，锁页内存）中，可以大幅提高把 Tensor 从 CPU 拷贝到 GPU 的速度。Pinned Memory 是在物理内存（RAM）中，不会被交换到虚拟内存的硬盘中，因此 CPU -> GPU 的效率更高。当 Tensor 位于 Pinned Memory ，还可以异步地（Non-blocking）把 Tensor 从 CPU 转换成 CUDA tensor。
 
 此外，`DataLoader` 中也可以设置 `pin_memory=True` 。
 
