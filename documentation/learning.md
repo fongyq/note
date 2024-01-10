@@ -2033,17 +2033,18 @@ bytes 以字节序列的形式（二进制形式）存储数据，不关心数�
   - 默认编码方式是 utf-8 。
   - `errors='strict'` 当编码失败，会抛出 UnicodeError 异常，其他选项参考 [Error Handlers](https://docs.python.org/3/library/codecs.html#error-handlers)。
 
-  ```python
-  >>> s = "★♣︎♠︎你好"
-  >>> s.encode('gbk')
-  Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-  UnicodeEncodeError: 'gbk' codec can not encode character '\u2663' in position 1: illegal multibyte sequence
-  >>> s.encode('gbk', 'ignore')
-  b'\xa1\xef\xc4\xe3\xba\xc3'
-  >>> s.encode('gbk', 'ignore').decode('gbk')
-  '★你好'
-  ```
+```python
+>>> s = "★♣︎♠︎你好"
+>>> s.encode('gbk')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+UnicodeEncodeError: 'gbk' codec can not encode character '\u2663' in position 1: illegal multibyte sequence
+>>> s.encode('gbk', 'ignore')
+b'\xa1\xef\xc4\xe3\xba\xc3'
+>>> s.encode('gbk', 'ignore').decode('gbk')
+'★你好'
+```
+
 - [bytes.decode(encoding='utf-8', errors='strict')](https://docs.python.org/3/library/stdtypes.html#bytes.decode)
 
 ```python
@@ -2078,7 +2079,7 @@ F12 可以用来查找网页中图片、视频、音频等内容的下载地址�
 ## `2020-03-19`
 > python `isinstance`
 
-`isinstance(object, classinfo)` 函数来判断一个对象是否是一个已知的类型，`classinfo` 可以是元组。`isinstance()` 会认为子类是一种父类类型，考虑继承关系，而 `type()` 不考虑继承。
+`isinstance(object, classinfo)` 函数来判断一个对象是否是一个已知的类型，`classinfo` 可以是元组。`isinstance` 会认为子类是一种父类类型，考虑继承关系，而 `type` 不考虑继承。
 
 ```python
 >>> a = 2
