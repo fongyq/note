@@ -831,7 +831,7 @@ ISM 频段（Industrial Scientific Medical Band）是国际通信联盟无线电
 
 设 $a \geq b$ 且均为正整数，其最大公约数性质如下：
 
-- $\gcd(a, b) = \gcd(b, a)%$
+- $\gcd(a, b) = \gcd(b, a)$
 - $\gcd(a, b) = \gcd(a\%b, b)$
 - $\gcd(a, b) = \gcd(a-b, b)$
 - 当 $a$ 和 $b$ 都是偶数时，$\gcd(a, b) = 2 \times \gcd(a/2, b/2)$
