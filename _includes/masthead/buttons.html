@@ -22,13 +22,13 @@
         {% endfor %}
     </div>
 
-    {% if site.project.version %}
+    <!-- {% if site.project.version %}
         <p class="site-masthead__version my-0">
             Copyright {{ site.project.version }}
         </p>
-    {% endif %}
+    {% endif %} -->
 
-    <p class="site-masthead__version my-0" id="current-time"></p>
+    <p id="current-time"></p>
 
     <script>
         function displayTime() {
@@ -49,10 +49,10 @@
             minutes = (minutes < 10 ? "0" : "") + minutes;
             seconds = (seconds < 10 ? "0" : "") + seconds;
 
-            var timeString = year + "-" + month + "-" + day;
+            var timeString = dayOfWeek;
+            timeString = timeString + " " + year + "-" + month + "-" + day;
             timeString = timeString + " " + hours + ":" + minutes + ":" + seconds;
             timeString = timeString + " " + timestamp;
-            timeString = timeString + " " + dayOfWeek;
             document.getElementById("current-time").innerHTML = timeString;
         }
         // flush every second
