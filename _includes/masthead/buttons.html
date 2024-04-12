@@ -27,4 +27,32 @@
             Copyright {{ site.project.version }}
         </p>
     {% endif %}
+
+    <p class="site-masthead__version my-0" id="current-time"></p>
+
+    <script>
+        function displayTime() {
+            var currentTime = new Date();
+            var year = currentTime.getFullYear();
+            var month = currentTime.getMonth() + 1;
+            var day = currentTime.getDate();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var dayOfWeek = days[currentTime.getDay()];
+
+            month = (month < 10 ? "0" : "") + month;
+            day = (day < 10 ? "0" : "") + day;
+            hours = (hours < 10 ? "0" : "") + hours;
+            minutes = (minutes < 10 ? "0" : "") + minutes;
+            seconds = (seconds < 10 ? "0" : "") + seconds;
+
+            var timeString = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + " " + dayOfWeek;
+            document.getElementById("current-time").innerHTML = timeString;
+        }
+        // flush every second
+        setInterval(displayTime, 1000);
+    </script>
+
 {% endif %}
