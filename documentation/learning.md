@@ -164,7 +164,7 @@ set [+abefhkmnptuvxBCEHPT] [+o option-name] [--] [-] [argument …]
 
 > [Unix 时间戳](https://www.unixtimestamp.com/)
 
-Unix 时间戳是从 UTC 时间 `1970-01-01 00:00:00`（北京时间 `1970-01-01 08:00:00` ）起至当前时刻的总秒数，不考虑闰秒。
+Unix 时间戳是从 UTC+0（即 GMT 时间）`1970-01-01 00:00:00`（对应北京时间 `1970-01-01 08:00:00` ）起至当前时刻的总秒数，不考虑闰秒。
 
 ```bash
 $ date +%s
