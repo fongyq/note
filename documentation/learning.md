@@ -17,6 +17,23 @@ description: ~
     </script>
 </head>
 
+## `2024-05-05`
+
+> [北京时间](https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E6%97%B6%E9%97%B4)
+
+1912年中华民国建立后，位于北京的中央观象台将全国分为五个时区，自西向东分别为：
+
+{:.table}
+| **Time Zone** | **TZ Identifier** | **UTC Offset** | **Area** |
+| --------- | ------- | ----- |----------- |
+| 昆仑时区 | Asia/Kashgar | UTC+05:30 | 新疆西部与西藏西部 |
+| 新藏时区 | Asia/Urumqi | UTC+06:00 | 新疆大部及西藏大部 |
+| 陇蜀时区 | Asia/Chongqing | UTC+07:00 | 华西 |
+| 中原标准时区 | Asia/Shanghai | UTC+08:00 | 华东 |
+| 长白时区 | Asia/Harbin | UTC+08:30 | 东北 |
+
+1949 年新中国成立后，UTC+08:00 时区正式命名为北京时间。新疆的部分地区同时使用 UTC+06:00 和 UTC+08:00 两种时间。
+
 ## `2024-04-28`
 
 > shell: [`history`](https://www.man7.org/linux/man-pages/man3/history.3.html)
