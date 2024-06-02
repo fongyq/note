@@ -23,7 +23,7 @@ description: ~
 
 制表符（Tab）不是可打印字符，因为它不是用于显示某个具体字符，更不代表固定长度的空白字符，而是用于控制文本的格式和布局。
 
-假设在 HTML 的 <pre> 元素中插入这样一段源码：
+假设在 HTML 的 \<pre\> 元素中插入这样一段源码：
 ```html
 &#9;This line begins with a single tab.
 Here&#9;are&#9;some&#9;more&#9;tab&#9;characters&#9;!
