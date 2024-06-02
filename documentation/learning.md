@@ -32,8 +32,8 @@ T.......T.......T.......T.......T.......T.......T.......T
 
 网页中显示的效果如下（默认 tab-size 为 8）：
 ```html
-        This line begins with a single tab.
-Here    are     some    more    tab     characters      !
+	This line begins with a single tab.
+Here	are	some	more	tab	characters	!
 T.......T.......T.......T.......T.......T.......T.......T
 ```
 
