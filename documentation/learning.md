@@ -17,6 +17,28 @@ description: ~
     </script>
 </head>
 
+## `2024-06-02`
+
+> 制表符
+
+制表符（Tab）不是可打印字符，因为它不是用于显示某个具体字符，更不代表固定长度的空白字符，而是用于控制文本的格式和布局。
+
+假设在 HTML 的 <pre> 元素中插入这样一段源码：
+```html
+&#9;This line begins with a single tab.
+Here&#9;are&#9;some&#9;more&#9;tab&#9;characters&#9;!
+T.......T.......T.......T.......T.......T.......T.......T
+```
+
+网页中显示的效果如下：
+```html
+        This line begins with a single tab.
+Here    are     some    more    tab     characters      !
+T.......T.......T.......T.......T.......T.......T.......T
+```
+
+使用文本编辑器时，按 Tab 键可以插入一个制表符，也可以插入固定长度的空格（一般默认为 4 个空格）。
+
 ## `2024-05-05`
 
 > [北京时间](https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E6%97%B6%E9%97%B4)
