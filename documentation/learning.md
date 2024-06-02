@@ -37,6 +37,10 @@ Here    are     some    more    tab     characters      !
 T.......T.......T.......T.......T.......T.......T.......T
 ```
 
+满足：
+
+$$(\mathrm{wordLength} + \mathrm{tabSpaceLength})\ \% \ \mathrm{tabSize} = 0.$$
+
 使用文本编辑器时，可以设置按 Tab 键插入一个制表符，或者插入固定长度的空格（一般默认为 4 个空格）。
 
 ## `2024-05-05`
