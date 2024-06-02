@@ -30,7 +30,7 @@ Here&#9;are&#9;some&#9;more&#9;tab&#9;characters&#9;!
 T.......T.......T.......T.......T.......T.......T.......T
 ```
 
-网页中显示的效果如下：
+网页中显示的效果如下（默认 tab-size 为 8）：
 ```html
         This line begins with a single tab.
 Here    are     some    more    tab     characters      !
