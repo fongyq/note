@@ -202,6 +202,14 @@ set [+abefhkmnptuvxBCEHPT] [+o option-name] [--] [-] [argument …]
   
   关闭 ``-x`` 选项。
 
+- ``set -u``
+
+  当访问了未定义（Unset）的变量，立即终止脚本的执行。
+
+- ``set +u``
+  
+  关闭 ``-u`` 选项。
+
 
 ## `2023-02-24`
 
