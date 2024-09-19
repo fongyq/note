@@ -17,6 +17,19 @@ description: ~
     </script>
 </head>
 
+## `2024-09-19`
+
+> shell: [`lscpu`](https://unix.stackexchange.com/questions/468766/understanding-output-of-lscpu)
+
+`lscpu` 用于打印 CPU 架构信息：
+- CPU(s)：逻辑核数，等于 `Thread(s) per core` x `Core(s) per socket` x `Socket(s)` 
+- Thread(s) per core：每个核的进程数
+- Core(s) per socket：每个物理 CPU 的核数
+- Socket(s)：物理 CPU 的个数
+- NUMA node(s)：NUMA 节点数量
+
+NUMA（Non-Uniform Memory Access）是一种内存架构，它允许多个处理器访问不同的物理内存区域，从而提高并行计算的性能。NUMA 的主要优势是减少了内存访问的延迟和带宽限制，因为每个处理器可以优先使用自己附近的内存。
+
 ## `2024-06-02`
 
 > 制表符
