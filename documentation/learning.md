@@ -17,6 +17,13 @@ description: ~
     </script>
 </head>
 
+## `2024-11-12`
+
+> python: `//`
+
+之前一直错误地以为 `//` 是只能用于两个整数之间的除法，其结果去掉小数点只保留整数部分（流下了基础不扎实的泪水）。
+其实 `//` 叫做 Floor Division，整数和浮点数都适用，是将正常除法的结果向下取整（结果为负数时，和直接去掉小数部分是不一样的）。
+
 ## `2024-09-19`
 
 > shell: [`lscpu`](https://unix.stackexchange.com/questions/468766/understanding-output-of-lscpu)
